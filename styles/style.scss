@@ -174,18 +174,30 @@ img{width: 100%;}
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	
 	li.item-menu{
 		font-size: 1em;
 		display: flex;
-
+		flex-direction: column;
+		background-color: $branco;
 		a{
 			color: #333333;
 			flex: 1;
 			padding:15px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
 		a:hover{
 			background-color: $cinza-background;
 			color: #333333;
+		}
+		ul.submenu{
+			padding-left: 7px;
+			background-color: #ccc;
+		}
+		ul.submenu li{
+			background-color: $branco;
 		}
 	}
 	#footer-menu{
@@ -208,6 +220,10 @@ img{width: 100%;}
 			span{
 				color: #333333;
 			}
+		}
+		.btn-submenu{
+			display: flex;
+			flex-direction: column;
 		}
 	}
 }

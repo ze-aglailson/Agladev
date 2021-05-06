@@ -154,14 +154,24 @@ img {
   position: relative; }
   .menu li.item-menu {
     font-size: 1em;
-    display: flex; }
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF; }
     .menu li.item-menu a {
       color: #333333;
       flex: 1;
-      padding: 15px; }
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
     .menu li.item-menu a:hover {
       background-color: #efefef;
       color: #333333; }
+    .menu li.item-menu ul.submenu {
+      padding-left: 7px;
+      background-color: #ccc; }
+    .menu li.item-menu ul.submenu li {
+      background-color: #FFFFFF; }
   .menu #footer-menu {
     width: 100%;
     position: absolute;
@@ -180,5 +190,8 @@ img {
       color: #00AAFF; }
       .menu #footer-menu a span {
         color: #333333; }
+    .menu #footer-menu .btn-submenu {
+      display: flex;
+      flex-direction: column; }
 
 /*# sourceMappingURL=style.css.map */
