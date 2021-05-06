@@ -34,6 +34,20 @@
             </div>
         </div>
 
+        <nav id="content-menu" class="content-menu">
+            <ul class="menu">
+                <section class="section-midias">
+                    <ul>
+                    <li><a href="#"><i class="icon fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="icon fab fa-instagram"></i></a></li>
+						<li><a href="#"><i class="icon fab fa-github"></i></a></li>
+						<li><a href="#"><i class="icon fas fa-envelope"></i></a></li> 
+                    </ul>
+                </section>
+            </ul>
+        </nav>
+
+
 
     </header>
     

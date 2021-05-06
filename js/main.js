@@ -4,8 +4,6 @@ window.onload = function(){
 
     btnMenu.on('click', function(){
 
-        let linha02 = $(".linha02")
-
         if(!btnMenu.hasClass("btn-menu-open")){
 
             btnMenu.addClass("btn-menu-open")
@@ -13,17 +11,18 @@ window.onload = function(){
 
         }else{
             btnMenu.removeClass("btn-menu-open")
+            openMenu();
         }
     })
 
     function openMenu(){
         let contentMenu = $('.content-menu')
-        if(!contentMenu.hasClass('content-menu-open')){
+        if(contentMenu.hasClass('content-menu-open')){
 
-            contentMenu.addClass('content-menu-open')
+            contentMenu.removeClass('content-menu-open')
 
         }else{
-            contentMenu.removeClass('content-menu-open')
+            contentMenu.addClass('content-menu-open')
         }
     }
 }
