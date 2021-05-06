@@ -169,3 +169,45 @@ img{width: 100%;}
 		.fa-envelope{color:#c13b2c }
 	}
 }
+//Items do menu
+.menu{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	li.item-menu{
+		font-size: 1em;
+		display: flex;
+
+		a{
+			color: #333333;
+			flex: 1;
+			padding:15px;
+		}
+		a:hover{
+			background-color: $cinza-background;
+			color: #333333;
+		}
+	}
+	#footer-menu{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		padding: 10px;
+		h3{
+			font-size: .7em;
+			color: #ccc;
+		}
+		a{
+			font-size: .7em;
+			color: $azul-piscina;
+			span{
+				color: #333333;
+			}
+		}
+	}
+}
