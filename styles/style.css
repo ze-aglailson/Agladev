@@ -153,11 +153,11 @@ img {
   flex-direction: column;
   position: relative; }
   .menu li.item-menu {
-    font-size: 1em;
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF; }
     .menu li.item-menu a {
+      font-size: .9em;
       color: #333333;
       flex: 1;
       padding: 15px;

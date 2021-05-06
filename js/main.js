@@ -1,4 +1,5 @@
 window.onload = function(){
+    var btnMenu = $('.btn-menu')
     (function ajustes(){
         //espaçando a logo das midias do menu
         let alturaContentLogo = document.getElementById('content-logo-btn-menu').offsetHeight
@@ -9,7 +10,6 @@ window.onload = function(){
 
     }())
     //btn-menu
-    var btnMenu = $('.btn-menu')
 
     btnMenu.on('click', function(){
 
@@ -44,5 +44,8 @@ window.onload = function(){
         let logoSpan = $('.logo #logo-span')
         logoSpan.css("color","#fff")
     }
+
+    // CRIAR UMA CLASS PARA  GERENCIAR FUNÇÕES DO MENU
+    
     
 }

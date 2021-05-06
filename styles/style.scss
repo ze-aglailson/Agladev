@@ -176,11 +176,11 @@ img{width: 100%;}
 	position: relative;
 	
 	li.item-menu{
-		font-size: 1em;
 		display: flex;
 		flex-direction: column;
 		background-color: $branco;
 		a{
+			font-size: .9em;
 			color: #333333;
 			flex: 1;
 			padding:15px;
