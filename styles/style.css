@@ -25,7 +25,7 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: [inicio] 30px [inicio-temp] 1fr repeat(21, 10px 1fr) [fim-temp] 30px [fim];
-  grid-template-rows: [inicio-cabecalho] 100vh [fim-cabecalho] 50px [inicio-servicos] auto [fim-servicos] 10px; }
+  grid-template-rows: [inicio-cabecalho] 50vh [fim-cabecalho] 50px [inicio-servicos] auto [fim-servicos] 10px; }
 
 /*CABECALHO*/
 .container-cabecalho {
@@ -52,7 +52,7 @@ img {
 
 .logo {
   color: #00AAFF;
-  font-size: 1.6em;
+  font-size: 1.4em;
   transition: .3s; }
 
 .logo span#logo-span {
@@ -135,7 +135,7 @@ img {
       .menu .section-midias ul li a {
         width: 100%;
         height: 100%;
-        font-size: 1.4em;
+        font-size: 1.2em;
         text-align: center; }
     .menu .section-midias ul li:hover {
       background-color: #f1f1f1; }
