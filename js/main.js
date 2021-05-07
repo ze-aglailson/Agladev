@@ -99,4 +99,26 @@ window.onload = function(){
         
         }
     })
+
+    //chamadas ajax
+    (function getCategoriaProjeto(){
+        let submenu = $('.submenu-cat-projetos')
+        $.ajax({
+            url:'http://localhost/Projetos/AglaDev/selecionaCatProjeto.php',
+            method:'GET',
+            dataType: 'json'
+
+        }).done(function(result){
+
+            for (let i = 0; i < result.length; i++) {
+                
+
+                submenu.prepend('<li class="item-submenu"><a href="#">'+result[i].categoriaProjetoNome+'</a></li>')
+                
+            }
+            console.log(result, submenu)
+        })
+    }())
+
+    
 }
