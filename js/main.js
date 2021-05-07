@@ -1,5 +1,6 @@
 window.onload = function(){
     var btnMenu = $('.btn-menu');
+    var contentMenu = document.querySelector('.content-menu');
    
     (function ajustes(){
         //espaçando a logo das midias do menu
@@ -9,21 +10,25 @@ window.onload = function(){
 
         console.log(menu)
 
-    }())
+    }());
 
     //btn-menu
     btnMenu.on('click', function(){
+        toggleBtnMenu()
+    })
 
+    function toggleBtnMenu(){
+    
         if(!btnMenu.hasClass("btn-menu-open")){
-
+            
             btnMenu.addClass("btn-menu-open")
             openMenu();
-
+            
         }else{
             btnMenu.removeClass("btn-menu-open")
             openMenu();
         }
-    })
+    }
 
     function openMenu(){
         let contentMenu = $('.content-menu')
@@ -85,4 +90,13 @@ window.onload = function(){
             btn.classList.toggle('btn-submenu-active')
         }
     }
+
+    //fecha meu ao clicar no content-menu
+    contentMenu.addEventListener('click', (e)=>{
+        if(e.target.id === 'content-menu'){
+
+            toggleBtnMenu();
+        
+        }
+    })
 }
