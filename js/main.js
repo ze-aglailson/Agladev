@@ -1,5 +1,6 @@
 window.onload = function(){
     var btnMenu = $('.btn-menu');
+   
     (function ajustes(){
         //espaçando a logo das midias do menu
         let alturaContentLogo = document.getElementById('content-logo-btn-menu').offsetHeight
@@ -9,8 +10,8 @@ window.onload = function(){
         console.log(menu)
 
     }())
-    //btn-menu
 
+    //btn-menu
     btnMenu.on('click', function(){
 
         if(!btnMenu.hasClass("btn-menu-open")){
@@ -44,8 +45,44 @@ window.onload = function(){
         let logoSpan = $('.logo #logo-span')
         logoSpan.css("color","#fff")
     }
+    //subemenus
+    (function toggleBtnSubmenu(){
+        let btns = document.querySelectorAll('.btn-submenu')
+        
+        btns.forEach(e=>{
+            
+            e.addEventListener('click', function(){
 
-    // CRIAR UMA CLASS PARA  GERENCIAR FUNÇÕES DO MENU
+                abrirSubmenu(e)
+
+            })
+
+        })
     
-    
+    }())
+
+    function abrirSubmenu(btn){
+
+        let submenu = btn.nextElementSibling
+
+        let alturaSubmenu = !!submenu.style.maxHeight
+
+        if(alturaSubmenu){
+            submenu.style.maxHeight = null
+            btn.classList.toggle('btn-submenu-active')
+        }else{
+            let submenus = document.querySelectorAll('.submenu')
+            submenus.forEach(e =>{
+                let altura = e.style.maxHeight
+                if(altura){
+                    e.style.maxHeight = null
+                    let btnSubmenuAberto = e.previousElementSibling
+                    btnSubmenuAberto.classList.toggle('btn-submenu-active')
+                }
+            })
+
+            submenu.style.maxHeight = submenu.scrollHeight+'px'
+            btn.classList.toggle('btn-submenu-active')
+        }
+    }
 }
