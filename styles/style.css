@@ -166,7 +166,6 @@ img {
       align-items: center; }
       .menu li.item-menu a span {
         transition: .3s;
-        color:#333333;
  }
     .menu li.item-menu a:hover {
       background-color: #333;
