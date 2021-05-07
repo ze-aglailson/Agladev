@@ -1,5 +1,5 @@
 window.onload = function(){
-    var btnMenu = $('.btn-menu')
+    var btnMenu = $('.btn-menu');
     (function ajustes(){
         //espaçando a logo das midias do menu
         let alturaContentLogo = document.getElementById('content-logo-btn-menu').offsetHeight
