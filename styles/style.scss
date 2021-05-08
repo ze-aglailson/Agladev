@@ -193,17 +193,17 @@ img{width: 100%;}
 			}
 		}
 		a:hover{
-			background-color: #333;
-			color: $branco;
+			background-color: #eeeeee;
+			color: #333;
 		}
 		ul.submenu{
 			padding-left: 10px;
-			background-color: $branco;
+			background-color: #eeeeee;
 			max-height: 0;
 			transition: .3s;
 		}
 		ul.submenu li{
-			background-color: #eee;
+			background-color: $branco;
 
 		}
 	}
@@ -211,7 +211,6 @@ img{width: 100%;}
 		span{
 			transform: rotate(90deg);
 			transition: .3s;
-			color: $branco;
 		}
 	}
 	

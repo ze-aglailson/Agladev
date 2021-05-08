@@ -165,22 +165,20 @@ img {
       justify-content: space-between;
       align-items: center; }
       .menu li.item-menu a span {
-        transition: .3s;
- }
+        transition: .3s; }
     .menu li.item-menu a:hover {
-      background-color: #333;
-      color: #FFFFFF; }
+      background-color: #eeeeee;
+      color: #333; }
     .menu li.item-menu ul.submenu {
       padding-left: 10px;
-      background-color: #FFFFFF;
+      background-color: #eeeeee;
       max-height: 0;
       transition: .3s; }
     .menu li.item-menu ul.submenu li {
-      background-color: #eee; }
+      background-color: #FFFFFF; }
   .menu .btn-submenu-active span {
     transform: rotate(90deg);
-    transition: .3s;
-    color: #FFFFFF; }
+    transition: .3s; }
   .menu #footer-menu {
     width: 100%;
     position: fixed;
