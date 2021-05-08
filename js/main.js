@@ -113,7 +113,7 @@ window.onload = function(){
             for (let i = 0; i < result.length; i++) {
                 
 
-                submenu.prepend('<li class="item-submenu"><a href="#">'+result[i].categoriaProjetoNome+'</a></li>')
+                submenu.prepend('<li><a class="item-submenu" href="#">'+result[i].categoriaProjetoNome+'</a></li>')
                 
             }
             console.log(result, submenu)
