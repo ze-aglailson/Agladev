@@ -50,7 +50,7 @@ window.onload = function(){
     
 }
 
-function Menu(btnMenu, contentMenu,btnsSubmenus,menuItems){
+function Menu(btnMenu, contentMenu,btnsSubmenus){
     this.contentMenu = contentMenu
     this.btnMenu = btnMenu
     this.btnsSubmenus = btnsSubmenus
@@ -170,14 +170,29 @@ function Menu(btnMenu, contentMenu,btnsSubmenus,menuItems){
         })
     }
 
-    this.abrirSubmenus = function(btnSubmenu){
+    this.abrirSubmenus = function(item){
 
-        let submenu = btnSubmenu.nextElementSibling
-        let alturaSubmenu = submenu = !!submenu.style.maxHeight
-
+        let submenu = item.nextElementSibling?item.nextElementSibling:false
+        let alturaSubmenu = 0
+        if(submenu){
+            alturaSubmenu = !!submenu.style.maxHeight
+        }
         if(alturaSubmenu){
             submenu.style.maxHeight = null
-            btnSubmenu.classList
+            item.classList.toggle('item-menu-active')
+        }else{
+        
+            let submenus = document.querySelectorAll('.submenu')
+            submenus.forEach(e =>{
+                let altura = e.style.maxHeight
+                if(altura){
+                    e.style.maxHeight = null
+                    let btnSubmenuAberto = e.previousElementSibling
+                    btnSubmenuAberto.classList.toggle('item-menu-active')
+                }
+            })
+            submenu.style.maxHeight = submenu.scrollHeight+'px'
+            item.classList.toggle('item-menu-active')
         }
         console.log(alturaSubmenu)
         
