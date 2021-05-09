@@ -107,7 +107,7 @@ window.onload = function(){
     (function getCategoriaProjeto(){
         let submenu = $('.submenu-cat-projetos')
         $.ajax({
-            url:'http://agladev.com/api/v1/CategoriaProjeto/listar',
+            url:'https://agladev/api/v1/CategoriaProjeto/listar',
             method:'GET',
             dataType: 'json'
 
