@@ -148,6 +148,7 @@ img {
       .menu .section-midias ul .fa-envelope {
         color: #c13b2c; }
   .menu .section-itens {
+    max-height: 80%;
     overflow-y: auto; }
     .menu .section-itens .item-menu {
       font-size: .9em;
