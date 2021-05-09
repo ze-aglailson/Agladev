@@ -9,7 +9,6 @@ window.onload = function(){
 
         menu.toggleBtnSubmenu()
         
-        console.log(contentMenu)
         btnMenu.addEventListener('click',function(){
             menu.toggleBtnMenu()
         })
@@ -139,7 +138,6 @@ function Menu(btnMenu, contentMenu,btnsSubmenus,menuItems){
     }
 
     this.openMenu = ()=>{
-        console.log(this.contentMenu)
         if(this.contentMenu.classList.contains('content-menu-open')){
             this.contentMenu.classList.remove('content-menu-open')
             this.logoClaro()
@@ -162,45 +160,27 @@ function Menu(btnMenu, contentMenu,btnsSubmenus,menuItems){
     //Eventos do menu
     this.toggleBtnSubmenu=()=>{
         let btns = this.btnsSubmenus
-        this.abrirSubmenus(btns)
-    }
 
-    this.abrirSubmenus = function(btnsSubmenus){
-        console.log('me achou')
-        btnsSubmenus.forEach(function(btnSubmenu){
+        btns.forEach(e => {
+            e.addEventListener('click', ()=>{
 
-            btnSubmenu.addEventListener('click', function(){
-
-                let submenu = btnSubmenu.nextElementSibling?btnSubmenu.nextElementSibling:false
-                let alturaSubmenu = 0
-                if(submenu){
-                    alturaSubmenu = !!submenu.style.maxHeight
-                }
-                if(alturaSubmenu){
-                    submenu.style.maxHeight
-                    btnSubmenu.classList.toggle('item-menu-active')
-                }else{
-                    let submenus = document.querySelectorAll('.submenu')
-                    submenus.forEach(e=>{
-                        let altura = e.style.maxHeight
-                        if(altura){
-                            e.style.maxHeight = null
-                            let btnSubmenuAberto = e.previousElementSibling
-                            btnSubmenuAberto.classList.toggle('item-menu-active')
-                        }
-                    })
-                    submenu.style.maxHeight = submenu.scrollHeight+"px"
-                    btnSubmenu.classList.toggle('item-menu-active')
-        
-                }
-
+                this.abrirSubmenus(e)
 
             })
-
         })
-        /*
+    }
 
-        */
+    this.abrirSubmenus = function(btnSubmenu){
+
+        let submenu = btnSubmenu.nextElementSibling
+        let alturaSubmenu = submenu = !!submenu.style.maxHeight
+
+        if(alturaSubmenu){
+            submenu.style.maxHeight = null
+            btnSubmenu.classList
+        }
+        console.log(alturaSubmenu)
+        
     }
 
     //fecha menu Ao clicar no content
