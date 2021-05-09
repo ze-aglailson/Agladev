@@ -8,8 +8,6 @@ window.onload = function(){
         let menu = document.querySelector('.menu')
         menu.style.paddingTop = alturaContentLogo+"px"
 
-        console.log(menu)
-
     }());
 
     //btn-menu
@@ -109,19 +107,19 @@ window.onload = function(){
     (function getCategoriaProjeto(){
         let submenu = $('.submenu-cat-projetos')
         $.ajax({
-            url:'http://agladev.com/selecionaCatProjeto.php',
+            url:'http://localhost/Projetos/AglaDev/api/v1/CategoriaProjeto/listar',
             method:'GET',
             dataType: 'json'
 
         }).done(function(result){
-
-            for (let i = 0; i < result.length; i++) {
+            let qtdDados = result['dados'][0].length
+            for (let i = 0; i < qtdDados; i++) {
                 
+                let dados = result['dados'][0][i]
 
-                submenu.prepend('<li><a class="item-submenu" href="#">'+result[i].categoriaProjetoNome+'</a></li>')
+                submenu.prepend('<li><a class="item-submenu" href="#">'+dados.categoriaProjetoNome+'</a></li>')
                 
             }
-            console.log(result, submenu)
         })
     }())
 
