@@ -50,15 +50,16 @@ window.onload = function(){
         let logoSpan = $('.logo #logo-span')
         logoSpan.css("color","#fff")
     }
+    
     //subemenus
     (function toggleBtnSubmenu(){
-        let btns = document.querySelectorAll('.btn-submenu')
+        let items = document.querySelectorAll('.item-menu')
         
-        btns.forEach(e=>{
+        items.forEach(item=>{
             
-            e.addEventListener('click', function(){
+            item.addEventListener('click', function(){
 
-                abrirSubmenu(e)
+                abrirSubmenu(item)
 
             })
 
@@ -66,29 +67,33 @@ window.onload = function(){
     
     }())
 
-    function abrirSubmenu(btn){
+    function abrirSubmenu(item){
 
-        let submenu = btn.nextElementSibling
-
-        let alturaSubmenu = !!submenu.style.maxHeight
-
+        let submenu = item.nextElementSibling?item.nextElementSibling:false
+        let alturaSubmenu = 0
+        if(submenu){
+            alturaSubmenu = !!submenu.style.maxHeight
+        }
         if(alturaSubmenu){
             submenu.style.maxHeight = null
-            btn.classList.toggle('btn-submenu-active')
+            item.classList.toggle('item-menu-active')
         }else{
+        
             let submenus = document.querySelectorAll('.submenu')
             submenus.forEach(e =>{
                 let altura = e.style.maxHeight
                 if(altura){
                     e.style.maxHeight = null
                     let btnSubmenuAberto = e.previousElementSibling
-                    btnSubmenuAberto.classList.toggle('btn-submenu-active')
+                    btnSubmenuAberto.classList.toggle('item-menu-active')
                 }
             })
-
             submenu.style.maxHeight = submenu.scrollHeight+'px'
-            btn.classList.toggle('btn-submenu-active')
+            item.classList.toggle('item-menu-active')
         }
+        /*
+
+        */
     }
 
     //fecha meu ao clicar no content-menu

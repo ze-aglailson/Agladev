@@ -150,19 +150,36 @@ img {
   .menu .section-itens {
     overflow-y: auto; }
     .menu .section-itens .item-menu {
-      font-size: 1em;
+      font-size: .9em;
       display: flex;
       color: #333333;
       flex: 1;
       justify-content: space-between;
-      padding: 15px; }
+      padding: 15px;
+      background-color: #FFFFFF; }
+      .menu .section-itens .item-menu span {
+        transition: .3s;
+        color: #333333; }
     .menu .section-itens .item-menu:hover {
-      background-color: #EEEEEE; }
+      background-color: #333333;
+      color: #FFFFFF; }
+      .menu .section-itens .item-menu:hover span {
+        color: #FFFFFF; }
+    .menu .section-itens .item-menu-active {
+      background-color: #333333;
+      color: #FFFFFF; }
+      .menu .section-itens .item-menu-active span {
+        transition: .3s;
+        transform: rotate(90deg);
+        color: #FFFFFF; }
     .menu .section-itens .submenu {
       border-left: 10px solid #CCCCCC;
-      border-right: 10px solid #CCCCCC; }
+      border-right: 10px solid #CCCCCC;
+      max-height: 0;
+      transition: .3s;
+      overflow: hidden; }
       .menu .section-itens .submenu .item-submenu {
-        font-size: 1em;
+        font-size: .9em;
         display: flex;
         color: #333333;
         background-color: #FFFFFF;
@@ -170,7 +187,8 @@ img {
         justify-content: space-between;
         padding: 15px; }
       .menu .section-itens .submenu .item-submenu:hover {
-        background-color: #EEEEEE; }
+        background-color: #333333;
+        color: #FFFFFF; }
   .menu #footer-menu {
     width: 100%;
     position: fixed;
