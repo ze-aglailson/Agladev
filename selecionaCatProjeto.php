@@ -1,7 +1,7 @@
 <?php
     header('Content-type: application/json'); //A PAGINA É CONVERTIDA PARA JSON E RECEBIDA PELO JS
 
-    $pdo = new PDO('mysql:host=127.0.0.1; dbname=agladev;' ,'root','2909');
+    $pdo = new PDO('mysql:host=162.241.2.193; dbname=ipuaon59_agladev;' ,'ipuaon59_admin','#jJ1234567891011');
 
     $stmt = $pdo->prepare("SELECT * FROM CategoriaProjeto");
     $stmt->execute();
