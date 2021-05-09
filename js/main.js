@@ -106,8 +106,7 @@ window.onload = function(){
         $.ajax({
             url:'http://localhost/Projetos/AglaDev/selecionaCatProjeto.php',
             method:'GET',
-            dataType: 'jsonp',
-            crossDomain:true
+            dataType: 'json'
 
         }).done(function(result){
 
