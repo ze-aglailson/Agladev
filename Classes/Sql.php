@@ -7,10 +7,10 @@ class Sql extends PDO{
     public function __construct()
     {
         $dbdriver = 'mysql';
-        $dbhost = '162.241.2.193';
-        $dbname = 'ipuaon59_agladev';
-        $dbuser = 'ipuaon59_admin';
-        $dbpassword = '#jJ1234567891011';
+        $dbhost = '127.0.0.1';
+        $dbname = 'agladev';
+        $dbuser = 'root';
+        $dbpassword = '2909';
 
         $this->conn = new PDO("$dbdriver:host=$dbhost; dbname=$dbname", $dbuser,$dbpassword);
     }

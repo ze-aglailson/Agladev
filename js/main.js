@@ -186,7 +186,6 @@ function Menu(btnMenu, contentMenu){
                         a.innerHTML = dados[i][nome]
                         li.appendChild(a)
                         contentSubmenu.appendChild(li)
-                        console.log(nome)
                     }
                     
                 }
