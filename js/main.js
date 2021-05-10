@@ -261,7 +261,7 @@ function Menu(btnMenu, contentMenu){
         }
     }
 
-    //fecha menu Ao clicar no content
+    //fecha menu Ao clicar no contente
     this.contentMenuClose = (element)=>{
         
         if(element.target.id === 'content-menu'){
