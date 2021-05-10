@@ -16,6 +16,7 @@ window.onload = function(){
         contentMenu.addEventListener('click', function(e){
             menu.contentMenuClose(e)
         })
+        console.log('atualizado')
         
     }());
 
