@@ -27,29 +27,6 @@ window.onload = function(){
 
     }());
     
-
-    //chamadas 
-    /*
-    (function getCategoriaProjeto(){
-        let submenu = $('.submenu-cat-projetos')
-        $.ajax({
-            url:'http://localhost/Projetos/AglaDev/api/v1/CategoriaProjeto/listar',
-            method:'GET',
-            dataType: 'json'
-
-        }).done(function(result){
-            let qtdDados = result['dados'][0].length
-            for (let i = 0; i < qtdDados; i++) {
-                
-                let dados = result['dados'][0][i]
-
-                submenu.prepend('<li><a class="item-submenu" href="#">'+dados.categoriaProjetoNome+'</a></li>')
-                
-            }
-        })
-    }())
-    */
-    
 }
 
 function Menu(btnMenu, contentMenu){
@@ -267,7 +244,7 @@ function Menu(btnMenu, contentMenu){
         
         if(element.target.id === 'content-menu'){
 
-
+            this.toggleBtnMenu();   
 
         }
         
