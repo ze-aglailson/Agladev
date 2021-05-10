@@ -3,10 +3,11 @@ window.onload = function(){
     var btnsSubmenus = document.querySelectorAll('.item-menu')
     var contentMenu = document.getElementById('content-menu');
     var menu = document.querySelector('.menu');
+    var contentListaItensMenu = document.querySelector('.section-itens');
 
     (function teste(){
         menu = new Menu(btnMenu, contentMenu,btnsSubmenus)
-
+        menu.carregaItensMenu(contentListaItensMenu)
         menu.toggleBtnSubmenu()
         
         btnMenu.addEventListener('click',function(){
@@ -27,7 +28,8 @@ window.onload = function(){
     }());
     
 
-    //chamadas ajax
+    //chamadas 
+    /*
     (function getCategoriaProjeto(){
         let submenu = $('.submenu-cat-projetos')
         $.ajax({
@@ -46,28 +48,31 @@ window.onload = function(){
             }
         })
     }())
-
+    */
     
 }
 
-function Menu(btnMenu, contentMenu,btnsSubmenus){
+function Menu(btnMenu, contentMenu){
     this.contentMenu = contentMenu
     this.btnMenu = btnMenu
-    this.btnsSubmenus = btnsSubmenus
+    this.btnsSubmenus = []
+    this.submenus = []
     this.menuitens = [
         {
             nome:'Home',
             link:'#',
-            subItens:[]
+            subItens:[],
+            classe:'Home'
         },
         {
             nome:'Serviços',
             link:'#',
-            subItens:[]
+            subItens:[],
+            classe:'Servico'
         },
         {
             nome:'Projetos',
-            link:'',
+            link:'#',
             subItens:[
                 {
                     nome:'LandingPage',
@@ -81,17 +86,20 @@ function Menu(btnMenu, contentMenu,btnsSubmenus){
                     nome:'Institucional',
                     link:'#',
                 },
-            ]
+            ],
+            classe:'CategoriaProjeto'
         },
         {
             nome:'Cases',
             link:'#',
-            subItens:[]
+            subItens:[],
+            classe:'Case'
         },
         {
             nome:'Portfólio',
             link:'#',
-            subItens:[]
+            subItens:[],
+            classe:'Portfolio'
         },
         {
             nome:'Categoria',
@@ -105,27 +113,87 @@ function Menu(btnMenu, contentMenu,btnsSubmenus){
                     nome:'BackEnd',
                     link:'#'
                 }
-            ]
+            ],
+            classe:'Categoria'
         },
         {
             nome:'Sobre',
-            link:'',
-            subItens:[]
+            link:'#',
+            subItens:[],
+            classe:'Sobre'
         },
         {
             nome:'Contato',
-            link:'',
-            subItens:[]
+            link:'#',
+            subItens:[],
+            classe:'Contato'
         }
     ]
 
-    /*/Eventos do menu
-    this.btnMenu.on('click', function(){
 
-        this.toggleBtnSubmenu();
+    this.carregaItensMenu = (contentLista)=>{
+        let listaItens = []
+        this.menuitens.forEach(e=>{
+            listaItens.push(e)
+            let li = document.createElement('li')
+            let a = document.createElement('a')
+            a.setAttribute('href',`${e.link}`)
+            a.classList.add('item-menu')
+            a.innerHTML = e.nome
+            a.setAttribute('classe',`${e.classe}`)
+            this.btnsSubmenus.push(a)
+            li.appendChild(a)
+            let submenu = document.createElement('ul')
+            submenu.classList.add('submenu')
+            this.submenus.push(submenu)
+            li.appendChild(submenu)
+            contentLista.appendChild(li)
+            
+        })
+        this.btnsSubmenus.forEach(e => {
+            contentSubmenu = e.nextElementSibling
+            this.carregaSubItemsMenu(contentSubmenu, e,e.getAttribute('classe'))
+        });
+    }
 
-    })
-    */
+    this.carregaSubItemsMenu=(contentSubmenu,btnSubmenu,classe)=>{
+        $.ajax({
+            url:'http://localhost/Projetos/AglaDev/api/v1/'+classe+'/listar',
+            method:'GET',
+            dataType:'json'
+        }).done(function(result){
+            let qtdDados = result['dados'][0].length
+            if(qtdDados>0){
+
+                let codigo = classe.toLowerCase()+'Cod'
+                let nome = classe.toLowerCase()+'Nome'
+                let link = classe.toLowerCase()+'Link'
+
+                
+                if(result['status'] != 'erro'){
+                    let dados = result['dados'][0]
+                    btnSubmenu.classList.add('btn-submenu')
+                    let icon = document.createElement('span')
+                    icon.classList.add('btn-submenu-icon')
+                    icon.innerHTML+= '<i class="fas fa-chevron-right"></i>'
+                    btnSubmenu.appendChild(icon)
+                    
+                    for (let i = 0; i < dados.length; i++) {
+                        let li = document.createElement('li')
+                        let a = document.createElement('a')
+                        a.setAttribute('href','#')
+                        a.classList.add('item-submenu')
+                        a.innerHTML = dados[i][nome]
+                        li.appendChild(a)
+                        contentSubmenu.appendChild(li)
+                        console.log(nome)
+                    }
+                    
+                }
+            }
+        })    
+    }
+   
 
     this.toggleBtnMenu = ()=>{
         if(!this.btnMenu.classList.contains("btn-menu-open")){
@@ -181,9 +249,7 @@ function Menu(btnMenu, contentMenu,btnsSubmenus){
             submenu.style.maxHeight = null
             item.classList.toggle('item-menu-active')
         }else{
-        
-            let submenus = document.querySelectorAll('.submenu')
-            submenus.forEach(e =>{
+            this.submenus.forEach(e =>{
                 let altura = e.style.maxHeight
                 if(altura){
                     e.style.maxHeight = null
@@ -194,8 +260,6 @@ function Menu(btnMenu, contentMenu,btnsSubmenus){
             submenu.style.maxHeight = submenu.scrollHeight+'px'
             item.classList.toggle('item-menu-active')
         }
-        console.log(alturaSubmenu)
-        
     }
 
     //fecha menu Ao clicar no content

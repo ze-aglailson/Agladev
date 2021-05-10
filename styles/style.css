@@ -175,7 +175,6 @@ img {
         color: #FFFFFF; }
     .menu .section-itens .submenu {
       border-left: 10px solid #CCCCCC;
-      border-right: 10px solid #CCCCCC;
       max-height: 0;
       transition: .3s;
       overflow: hidden; }

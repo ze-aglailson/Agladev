@@ -19,118 +19,29 @@ USE `agladev` ;
 -- -----------------------------------------------------
 -- Table ``.`Pessoa`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `agladev`.`Pessoa` (
-  `pessoaCod` INT NOT NULL AUTO_INCREMENT,
-  `pessoaNome` VARCHAR(100) NOT NULL,
-  `pessoaSobrenome` VARCHAR(100) NOT NULL,
-  `pessoaEmail` VARCHAR(255) NOT NULL,
-  `pessoaSenha` VARCHAR(255) NOT NULL,
-  `pessoaDataCadastro` TIMESTAMP NOT NULL DEFAULT  CURRENT_TIMESTAMP,
-  `pessoaImg` VARCHAR(255) NULL,
-  PRIMARY KEY (`pessoaCod`))
+CREATE TABLE IF NOT EXISTS `agladev`.`CategoriaProjeto` (
+  `categoriaprojetoCod` INT NOT NULL AUTO_INCREMENT,
+  `categoriaprojetoNome` VARCHAR(100) NOT NULL,
+  `categoriaprojetoLink` VARCHAR(512) NOT NULL,
+  PRIMARY KEY (`categoriaprojetoCod`))
+ENGINE = InnoDB;
+
+INSERT INTO CategoriaProjeto VALUES
+(NULL, 'E-commerce','#'),
+(NULL, 'Institucional','#');
+
+CREATE TABLE IF NOT EXISTS `agladev`.`Categoria` (
+  `categoriaCod` INT NOT NULL AUTO_INCREMENT,
+  `categoriaNome` VARCHAR(100) NOT NULL,
+  `categoriaLink` VARCHAR(512) NOT NULL,
+  PRIMARY KEY (`categoriaCod`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table ``.`Cliente`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `agladev`.`Cliente` (
-  `pessoaCod` INT NOT NULL,
-  PRIMARY KEY (`pessoaCod`),
-  CONSTRAINT `fk_Cliente_Pessoa1`
-    FOREIGN KEY (`pessoaCod`)
-    REFERENCES ``.`Pessoa` (`pessoaCod`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table ``.`Projeto`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `agladev`.`Projeto` (
-  `projetoCod` INT NOT NULL AUTO_INCREMENT,
-  `projetoTitulo` VARCHAR(100) NOT NULL,
-  `projetoDescricao` VARCHAR(512) NULL,
-  `projetoDataInicio` DATE NOT NULL,
-  `projetoDataConclusao` DATE NOT NULL,
-  `cliente_pessoaCod` INT NOT NULL,
-  PRIMARY KEY (`projetoCod`),
-  INDEX `fk_Projeto_Cliente1_idx` (`cliente_pessoaCod` ASC) VISIBLE,
-  CONSTRAINT `fk_Projeto_Cliente1`
-    FOREIGN KEY (`cliente_pessoaCod`)
-    REFERENCES ``.`Cliente` (`pessoaCod`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table ``.`Setor`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `agladev`.`Setor` (
-  `setorCod` INT NOT NULL AUTO_INCREMENT,
-  `setorNome` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`setorCod`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table ``.`Cargo`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `agladev`.`Cargo` (
-  `cargoCod` INT NOT NULL AUTO_INCREMENT,
-  `cargoNome` VARCHAR(100) NOT NULL,
-  `setorCod` INT NOT NULL,
-  `cargoSalario` DECIMAL(10,2) NOT NULL,
-  PRIMARY KEY (`cargoCod`, `setorCod`),
-  INDEX `fk_Cargo_Setor1_idx` (`setorCod` ASC) VISIBLE,
-  CONSTRAINT `fk_Cargo_Setor1`
-    FOREIGN KEY (`setorCod`)
-    REFERENCES ``.`Setor` (`setorCod`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table ``.`Funcionario`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `agladev`.`Funcionario` (
-  `funcionario_pessoaCod` INT NOT NULL,
-  `cargoCod` INT NOT NULL,
-  PRIMARY KEY (`funcionario_pessoaCod`),
-  INDEX `fk_Funcionario_Cargo1_idx` (`cargoCod` ASC) VISIBLE,
-  CONSTRAINT `fk_Funcionario_Pessoa`
-    FOREIGN KEY (`funcionario_pessoaCod`)
-    REFERENCES ``.`Pessoa` (`pessoaCod`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Funcionario_Cargo1`
-    FOREIGN KEY (`cargoCod`)
-    REFERENCES ``.`Cargo` (`cargoCod`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table ``.`EtapaProjeto`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `agladev`.`EtapaProjeto` (
-  `etapaProjetoCod` INT NOT NULL AUTO_INCREMENT,
-  `etapaProjetoTitle` VARCHAR(100) NOT NULL,
-  `etapaProjetoInicio` DATE NULL DEFAULT CURRENT_TIMESTAMP(),
-  `etapaProjetoFim` DATETIME NULL DEFAULT CURRENT_TIMESTAMP(),
-  `projetoCod` INT NOT NULL,
-  PRIMARY KEY (`etapaProjetoCod`, `projetoCod`),
-  INDEX `fk_EtapaProjeto_Projeto1_idx` (`projetoCod` ASC) VISIBLE,
-  CONSTRAINT `fk_EtapaProjeto_Projeto1`
-    FOREIGN KEY (`projetoCod`)
-    REFERENCES `agladev`.`Projeto` (`projetoCod`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- ---------------------------------------------------
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
