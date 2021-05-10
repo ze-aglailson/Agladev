@@ -158,7 +158,7 @@ function Menu(btnMenu, contentMenu){
 
     this.carregaSubItemsMenu=(contentSubmenu,btnSubmenu,classe)=>{
         $.ajax({
-            url:'http://localhost/Projetos/AglaDev/api/v1/'+classe+'/listar',
+            url:'https://agladev.com/api/v1/'+classe+'/listar',
             method:'GET',
             dataType:'json'
         }).done(function(result){
