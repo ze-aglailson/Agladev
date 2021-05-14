@@ -15,6 +15,7 @@
 
             $parametros = array();
             $parametros = $url;
+            
 
             //Capturando exceções da classe/metodo
             try {

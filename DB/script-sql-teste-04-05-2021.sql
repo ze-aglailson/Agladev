@@ -36,6 +36,8 @@ CREATE TABLE IF NOT EXISTS `agladev`.`Categoria` (
   `categoriaLink` VARCHAR(512) NOT NULL,
   PRIMARY KEY (`categoriaCod`))
 ENGINE = InnoDB;
+INSERT INTO Categoria VALUES
+(NULL, 'LandingPage','#');
 
 
 -- -----------------------------------------------------
