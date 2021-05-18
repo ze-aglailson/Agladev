@@ -1,106 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta property="og:url"          content="https://agladev.github.io/Portfolio/" />
-	<meta property="og:type"         content="article" />
-	<meta property="og:title"        content="AglaDev Soluções" />
-	<meta property="og:description"  content="Soluções em desenvolvimento web e Marketing Digital." />
-	<meta property="og:image"        content="img/jpg/metaimg1.jpg" />
-	<meta property="og:image:width" content="800">
-	<meta property="og:image:height" content="600">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="author" content="José Aglailson">
-	<meta name="keywords" content="Desenvolvedor, Programado FrontEnd, desenvolvimento de site">
-	<title>AglaDev</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-	<link rel="icon" type="icon" href="img/png/icon.png">
-</head>
-<body class="grid-container">
+<?php
 
-    <header class="container-cabecalho">
-
-        <div id="content-logo-btn-menu">
-            <h2><a class="logo" href="#">Agla<span id="logo-span">Dev</span></a></h2>
-            <div class="btn-menu">
-                <span class="linha linha01"></span>
-                <span class="linha linha02"></span>
-                <span class="linha linha03"></span>
-            </div>
-        </div>
-
-        <nav id="content-menu" class="content-menu">
-            <ul class="menu">
-
-                <section class="section-midias">
-                    <ul>
-                    <li><a href="#"><i class="icon fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="icon fab fa-instagram"></i></a></li>
-						<li><a href="#"><i class="icon fab fa-github"></i></a></li>
-						<li><a href="#"><i class="icon fas fa-envelope"></i></a></li> 
-                    </ul>
-                </section>
-
-                <section class="section-itens">
-                    <!--
-
-                        <li><a class="item-menu" href="#">Home</a>
-                            todos os items tem suporte a ter subitem
-                            basta apenas add alguns elementos com algumas classes
-                            <ul class="submenu">
-                            </ul>
-                        </li>
-                        <li><a class="item-menu" href="#">serviços</a>
-                            <ul class="submenu">
-                            </ul>
-                        </li>
-                        <li><a class="item-menu  btn-submenu" href="#">Projetos<span><i class="fas fa-chevron-right"></i></span></i></a>
-                            <ul class="submenu submenu-cat-projetos">
-                                Dados vindo via ajax
-                            </ul>
-                        </li>
-                        <li><a class="item-menu" href="#">Cases</a>
-                            <ul class="submenu">
-                            </ul>
-                        </li>
-                        <li><a class="item-menu" href="#">Portfolio</a>
-                            <ul class="submenu">
-                            </ul>
-                        </li>
-                        <li><a class="item-menu btn-submenu" href="#">Categorias<span><i class="fas fa-chevron-right"></i></span></i></a>
-                            <ul class="submenu">
-                                <li><a class="item-submenu" href="#">FrontEnd</a></li>    
-                                <li><a class="item-submenu" href="#">Backend</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="item-menu" href="#">Sobre</a>
-                            <ul class="submenu">
-                            </ul>
-                        </li>
-                        <li><a class="item-menu" href="#">Contato</a>
-                            <ul class="submenu">
-                            </ul>
-                        </li>
-                    -->
-                
-                </section>
-
-                <footer id="footer-menu">
-                    <h3>Todos os direitos reservados</h3>
-                    <a href="#">Agla<span>Dev</span></a>
-                </footer>
-
-            </ul>
-        </nav>
+    require_once('App/Core/Core.php');
+    require_once('lib/Database/Conexao.php');
+    require_once('App/Controller/HomeController.php');
+    require_once('App/Controller/PessoaController.php');
+    require_once('App/Controller/ErroController.php');
+    require_once('App/Model/Padrao.php');
+    require_once('App/Model/Pessoa.php');
+    require_once('vendor/autoload.php');
 
 
+    $template = file_get_contents('App/Template/estrutura.html');
+    ob_start();
+    $teste = new Core;
+    $teste->start($_GET);
 
-    </header>
-    
-</body>
-</html>
+    $saida = ob_get_contents();
+
+    ob_end_clean();
+
+    $templatePronto = str_replace('{{area_dinamica}}',$saida,$template);
+
+    echo $templatePronto;
+
+
+?>

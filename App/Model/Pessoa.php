@@ -1,45 +1,26 @@
 <?php
-    class Pessoa{
+    class Pessoa extends Padrao{
+        
 
+        public function listaTodos(){
 
-        public function listar($parametros = array()){
-            if($parametros){
-                
-                $id = $parametros[0];
+            $result = $this->select("SELECT * FROM Pessoa ORDER BY pessoaCod ASC");
 
-                $conn = new Sql();
-                $result = $conn->select("SELECT * FROM Pessoa WHERE pessoaCod = :CODIGO",array(
-                    'CODIGO'=>$id
-                ));
-                $dados = array();
-                while($linha = $result->fetchAll(PDO::FETCH_ASSOC)){
-                    $dados[] = $linha;
-                }
-                
-                if(!$dados){
-                    throw new Exception("Nenhuma categoria de produto cadastrada"); 
-                }
-                
-                return $dados;
+            return $result;
 
-            }else{
-
-                $conn = new Sql();
-                $result = $conn->select("SELECT * FROM Pessoa ORDER BY  pessoaCod ASC");
-                $dados = array();
-                
-                while($linha = $result->fetchAll(PDO::FETCH_ASSOC)){
-                    $dados[] = $linha;
-                }
-                
-                if(!$dados){
-                    throw new Exception("Nenhuma categoria de produto cadastrada"); 
-                }
-                
-                return $dados;
-            }
         }
+
+        public function login($dados){
+            echo "Email: ".$dados['email'];
+            echo "<br>";
+            echo "dados: ".$dados['senha'];
+
+        }
+
+       
     }
+
+
 
 
 ?>

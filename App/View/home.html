@@ -1,0 +1,8 @@
+<section class="container-servicos">
+    {% for pessoa in pessoas %}
+        <article>
+            <h3>{{pessoa.pessoaNome}}</h3>
+            <p>{{pessoa.pessoaEmail}}</p>
+        </article>
+    {% endfor%}
+</section>

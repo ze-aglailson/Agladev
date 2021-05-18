@@ -255,3 +255,9 @@ img{width: 100%;}
 	}
 
 }
+
+// Parte dinamica do template
+.principal{
+	grid-column: inicio/fim;
+	padding: 0 30px;
+}
