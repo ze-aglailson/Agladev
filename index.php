@@ -7,6 +7,7 @@
     require_once('App/Controller/ErroController.php');
     require_once('App/Model/Padrao.php');
     require_once('App/Model/Pessoa.php');
+    require_once('App/Model/Servico.php');
     require_once('vendor/autoload.php');
 
 

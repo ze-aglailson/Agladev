@@ -1,8 +1,21 @@
 <section class="container-servicos">
-    {% for pessoa in pessoas %}
-        <article>
-            <h3>{{pessoa.pessoaNome}}</h3>
-            <p>{{pessoa.pessoaEmail}}</p>
+
+    <div class="title-sections title-servicos">
+        <h2>Serviços</h2>
+        <hr>
+    </div>
+    <div class="servicos">
+     
+        {% for servico in servicos %}
+        <article class="servico">
+            <div class="div-img">
+                <img src="{{servico.servicoImagem}}" alt="{{servico.servicoTitle}}">
+            </div>
+            <div class="div-titles">
+                <h2>{{servico.servicoTitle}}</h2>
+                <p>{{servico.servicoDescricao}}</p>
+            </div>
         </article>
-    {% endfor%}
+        {% endfor %}
+    </div>
 </section>

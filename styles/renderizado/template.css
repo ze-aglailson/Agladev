@@ -25,14 +25,15 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: [inicio] 30px [inicio-temp] 1fr repeat(21, 10px 1fr) [fim-temp] 30px [fim];
-  grid-template-rows: [inicio-cabecalho] 50vh [fim-cabecalho] 50px [inicio-servicos] auto [fim-servicos] 10px; }
+  grid-template-rows: [inicio-cabecalho] 50vh [fim-cabecalho] 50px [inicio-principal] auto [fim-principal] 10px;
+  background-color: #efefef; }
 
 /*CABECALHO*/
 .container-cabecalho {
   grid-column: inicio/fim;
   grid-row: inicio-cabecalho/fim-cabecalho;
   padding: 0 30px;
-  background: linear-gradient(rgba(46, 49, 49, 0.8), rgba(46, 49, 49, 0.8)), url(../img/jpg/cabecalho1.jpg);
+  background: linear-gradient(rgba(46, 49, 49, 0.8), rgba(46, 49, 49, 0.8)), url(../../img/jpg/cabecalho1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
@@ -212,6 +213,7 @@ img {
 
 .principal {
   grid-column: inicio/fim;
+  grid-row: inicio-principal/fim-principal;
   padding: 0 30px; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=template.css.map */

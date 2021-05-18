@@ -107,7 +107,13 @@ INSERT INTO Cargo VALUES
 (NULL,'Coodernado(a) de RH',2,'5000'),
 (NULL,'Vendedor',3,'4300');
 -- TESTE
-SELECT CONCAT(P.pessoaNome,' ',P.pessoaSobrenome)
+SELECT CONCAT(P.pessoaNome,' ',P.pessoaSobrenome) AS Nome, P.pessoaEmail AS Email, C.cargoNome AS Cargo, S.setorNome AS Setor FROM Funcionario F
+INNER JOIN Pessoa P
+ON F.pessoaCod = P.pessoaCod
+INNER JOIN Cargo C
+ON F.cargoCod = C.cargoCod
+INNER JOIN Setor S
+ON F.setorCod = S.setorCod AND F.setorCod = S.setorCod;
 
 
 -- -----------------------------------------------------
@@ -248,6 +254,19 @@ CREATE TABLE IF NOT EXISTS `agladev`.`Projeto_Tecnologia` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `agladev`.`Servico` (
+  `servicoCod` INT NOT NULL AUTO_INCREMENT,
+  `servicoTitle` VARCHAR(100) NOT NULL,
+  `servicoDescricao` VARCHAR(255) NOT NULL,
+  `servicoImagem` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`servicoCod`))
+ENGINE = InnoDB;
+
+INSERT INTO Servico VALUES
+(NULL,'','',''),
+(NULL,'','',''),
+(NULL,'','','');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
