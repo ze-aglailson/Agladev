@@ -122,25 +122,12 @@ function Menu(btnMenu, contentMenu){
             classe:'Servico'
         },
         {
-            nome:'Projetos',
-            link:'#projetos',
-            subItens:[
-                {
-                    nome:'LandingPage',
-                    link:'#',
-                },
-                {
-                    nome:'E-commerce',
-                    link:'#',
-                },
-                {
-                    nome:'Institucional',
-                    link:'#',
-                },
-            ],
-            classe:'CategoriaProjeto'
+            nome:'Clientes',
+            link:'#clientes',
+            subItens:[],
+            classe:'Cliente'
         },
-        {
+        /* {
             nome:'Cases',
             link:'#cases',
             subItens:[],
@@ -178,7 +165,7 @@ function Menu(btnMenu, contentMenu){
             link:'#contato',
             subItens:[],
             classe:'Contato'
-        }
+        } */
     ]
 
 

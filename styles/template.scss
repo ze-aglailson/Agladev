@@ -260,10 +260,11 @@ img{width: 100%;}
 	grid-row: inicio-principal/fim-principal;
 
 	display: grid;
-	grid-template-columns: [inicio]30px [inicio-principal] 1fr repeat(21, 10px 1fr) [fim-principal] 30px[fim];
+	grid-template-columns: [inicio]15px [inicio-principal] 1fr repeat(21, 10px 1fr) [fim-principal] 15px[fim];
 	grid-template-rows: 
 	[inicio-slider] 100vh [fim-slider]30px
 	[inicio-servicos] auto [fim-servicos]30px
+	[inicio-clientes] 100vh [fim-clientes]30px
 
 						;
 	.btn-volta-topo{
