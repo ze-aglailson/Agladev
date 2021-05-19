@@ -1,11 +1,15 @@
 window.onload = function(){
+
     var btnMenu = document.querySelector('.btn-menu');
+    var cabecalho = document.getElementById('content-logo-btn-menu');
+    var alturaCabecalho = cabecalho.offsetHeight;
+    console.log(alturaCabecalho);
     var btnsSubmenus = document.querySelectorAll('.item-menu')
     var contentMenu = document.getElementById('content-menu');
     var menu = document.querySelector('.menu');
     var contentListaItensMenu = document.querySelector('.section-itens');
 
-    (function teste(){
+    (function start(){
         menu = new Menu(btnMenu, contentMenu,btnsSubmenus)
         menu.carregaItensMenu(contentListaItensMenu)
         menu.toggleBtnSubmenu()
@@ -25,6 +29,39 @@ window.onload = function(){
         let alturaContentLogo = document.getElementById('content-logo-btn-menu').offsetHeight
         let menu = document.querySelector('.menu')
         menu.style.paddingTop = alturaContentLogo+"px"
+
+        //Toggle botão volta topo
+
+        window.addEventListener('scroll', function(){
+            var posicaoAtual = window.scrollY;
+            if(posicaoAtual > (alturaCabecalho + 200)){
+                btnVoltaTopo.style.opacity = 0.5
+            }else{
+                btnVoltaTopo.style.opacity = 0
+            }
+        })
+
+        //Animação volta topo
+        var btnVoltaTopo = document.querySelector('.btn-volta-topo');
+        var posiScrollY;
+
+        btnVoltaTopo.addEventListener('click',function(){
+            posiScrollY = window.scrollY
+            time = 30
+            var intervalo = setInterval(function(){
+
+                if(posiScrollY > 0){
+                    posiScrollY-=time;
+                    window.scrollTo(0,posiScrollY)
+                    if(window.scrollY === 0){
+                        posiScrollY = window.scrollY
+                    }
+                }else{
+                    clearInterval(intervalo)
+                }
+
+            },4)
+        })
 
     }());
     
