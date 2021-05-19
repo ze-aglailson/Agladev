@@ -9,7 +9,7 @@ class Conexao extends PDO{
       $db_host = "162.241.2.193";
       $db_name = "ipuaon59_agladev";
       $db_user = "ipuaon59_admin";
-      $db_password = "#jJ123456789101";
+      $db_password = "#jJ1234567891011";
 
       //informação do sistema
       $sistema_titulo = "AglaDev";
