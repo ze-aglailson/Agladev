@@ -25,18 +25,14 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: [inicio] 30px [inicio-temp] 1fr repeat(21, 10px 1fr) [fim-temp] 30px [fim];
-  grid-template-rows: [inicio-cabecalho] 100vh [fim-cabecalho] 50px [inicio-principal] auto [fim-principal] 40px [inicio-footet] auto [fim-footer];
+  grid-template-rows: [inicio-cabecalho] auto [fim-cabecalho] 0px [inicio-principal] auto [fim-principal] 40px [inicio-footet] auto [fim-footer];
   background-color: #efefef; }
 
 /*CABECALHO*/
 .container-cabecalho {
   grid-column: inicio/fim;
   grid-row: inicio-cabecalho/fim-cabecalho;
-  padding: 0 30px;
-  background: linear-gradient(rgba(46, 49, 49, 0.8), rgba(46, 49, 49, 0.8)), url(../../img/jpg/cabecalho1.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; }
+  padding: 0 30px; }
 
 /*content-logo-menu*/
 #content-logo-btn-menu {
@@ -211,11 +207,13 @@ img {
       .menu #footer-menu a span {
         color: #333333; }
 
-.principal {
+.grid-principal {
   grid-column: inicio/fim;
   grid-row: inicio-principal/fim-principal;
-  padding: 0 30px; }
-  .principal .btn-volta-topo {
+  display: grid;
+  grid-template-columns: [inicio] 30px [inicio-principal] 1fr repeat(21, 10px 1fr) [fim-principal] 30px [fim];
+  grid-template-rows: [inicio-slider] 100vh [fim-slider] 30px [inicio-servicos] auto [fim-servicos] 30px; }
+  .grid-principal .btn-volta-topo {
     height: 30px;
     width: 30px;
     background-color: #0af;
@@ -231,9 +229,9 @@ img {
     justify-content: center;
     align-items: center;
     cursor: pointer; }
-    .principal .btn-volta-topo i {
+    .grid-principal .btn-volta-topo i {
       color: #fff; }
-  .principal .btn-volta-topo:hover {
+  .grid-principal .btn-volta-topo:hover {
     opacity: .8; }
 
 .footer {

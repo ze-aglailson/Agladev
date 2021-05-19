@@ -1,7 +1,21 @@
 //Arquivo de estilo da pagina inicial
 
 /*CONFIGURAÇÕES SEÇÃO DE SERVIÇOS*/
+.container-slider{
+    grid-column: inicio/fim;
+    grid-row:inicio-slider/fim-slider ;
+    background: linear-gradient(rgba(46, 49, 49, 0.8),rgba(46, 49, 49, 0.8)), url(../../img/jpg/cabecalho1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/*CONFIGURAÇÕES SEÇÃO DE SERVIÇOS*/
 .container-servicos{
+    grid-column: inicio-principal/fim-principal;
+    grid-row:inicio-servicos/fim-servicos ;
+
     .title-sections{
         width: 100%;
         display: flex;
