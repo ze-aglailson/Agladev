@@ -25,7 +25,7 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: [inicio] 30px [inicio-temp] 1fr repeat(21, 10px 1fr) [fim-temp] 30px [fim];
-  grid-template-rows: [inicio-cabecalho] 50vh [fim-cabecalho] 50px [inicio-principal] auto [fim-principal] 10px;
+  grid-template-rows: [inicio-cabecalho] 100vh [fim-cabecalho] 50px [inicio-principal] auto [fim-principal] 40px [inicio-footet] auto [fim-footer];
   background-color: #efefef; }
 
 /*CABECALHO*/
@@ -215,5 +215,45 @@ img {
   grid-column: inicio/fim;
   grid-row: inicio-principal/fim-principal;
   padding: 0 30px; }
+  .principal .btn-volta-topo {
+    height: 30px;
+    width: 30px;
+    background-color: #0af;
+    font-size: 14px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.5;
+    /* 
+    transition: opacity .2s ease-out;
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; }
+    .principal .btn-volta-topo i {
+      color: #fff; }
+  .principal .btn-volta-topo:hover {
+    opacity: .8; }
+
+.footer {
+  grid-column: inicio/fim;
+  grid-row: inicio-footer/fim-footer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #efefef;
+  background-color: #FFFFFF; }
+  .footer h3 {
+    font-size: .7em;
+    color: #ccc; }
+  .footer a {
+    font-size: .7em;
+    color: #00AAFF; }
+    .footer a span {
+      color: #333333; }
 
 /*# sourceMappingURL=template.css.map */

@@ -4,7 +4,7 @@ class PessoaController{
 
     public function index(){
 
-
+        echo "Voce ta na controller de pessoa";
 
     }
 
