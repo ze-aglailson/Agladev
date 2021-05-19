@@ -6,10 +6,10 @@ class Conexao extends PDO{
    public function __construct()
    {
       $db_driver = "mysql";
-      $db_host = "127.0.0.1";
-      $db_name = "agladev";
-      $db_user = "root";
-      $db_password = "2909";
+      $db_host = "162.241.2.193";
+      $db_name = "ipuaon59_agladev";
+      $db_user = "ipuaon59_admin";
+      $db_password = "#jJ1234567891011";
 
       //informação do sistema
       $sistema_titulo = "AglaDev";
