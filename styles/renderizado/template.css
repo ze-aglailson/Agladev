@@ -21,6 +21,9 @@ img {
 ::-webkit-scrollbar {
   width: 0px; }
 
+.paralisa-body {
+  overflow: hidden; }
+
 .grid-container {
   width: 100%;
   display: grid;

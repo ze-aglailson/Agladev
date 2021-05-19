@@ -3,12 +3,13 @@ window.onload = function(){
     var btnMenu = document.querySelector('.btn-menu');
     var cabecalho = document.getElementById('content-logo-btn-menu');
     var alturaCabecalho = cabecalho.offsetHeight;
-    console.log(alturaCabecalho);
+    console.log("Altura cabeçalho:"+alturaCabecalho);
     var btnsSubmenus = document.querySelectorAll('.item-menu')
     var contentMenu = document.getElementById('content-menu');
     var menu = document.querySelector('.menu');
     var contentListaItensMenu = document.querySelector('.section-itens');
 
+    //Start classe passa os parametros
     (function start(){
         menu = new Menu(btnMenu, contentMenu,btnsSubmenus)
         menu.carregaItensMenu(contentListaItensMenu)
@@ -20,8 +21,24 @@ window.onload = function(){
         contentMenu.addEventListener('click', function(e){
             menu.contentMenuClose(e)
         })
-        console.log('atualizado',"teste")
-        
+
+        //starta o scroll de cada item menu
+        var itemsMenu = document.querySelectorAll('.item-menu')
+        itemsMenu.forEach(item => {
+            item.addEventListener("click", function(e){
+                e.preventDefault()
+                itemsMenuScroll(item, alturaCabecalho)
+                menu.toggleBtnMenu()
+            })
+        });
+
+        //Muda cor cabecalho
+        window.addEventListener('scroll', function(){
+            var posicaoAtual = window.scrollY;
+
+            menu.mudaCorCabecalho(cabecalho, alturaCabecalho,posicaoAtual)
+            
+        })
     }());
 
     (function ajustes(){
@@ -38,7 +55,7 @@ window.onload = function(){
                 btnVoltaTopo.style.opacity = 0.5
             }else{
                 btnVoltaTopo.style.opacity = 0
-            }
+            }  
         })
 
         //Animação volta topo
@@ -62,32 +79,51 @@ window.onload = function(){
 
             },4)
         })
+        //itemsMenuScroll()
 
     }());
+
+    //Funções
+    function itemsMenuScroll(itemMenu, alturaCabecalho){
+        
+        var seletor = $(itemMenu).attr("href")
+        var posicao = $(seletor).offset().top
+        $("html, body").animate({
+            scrollTop:posicao-(alturaCabecalho+10)
+        },500)
+        
+    }
     
 }
+
+
+
+//Classes
 
 function Menu(btnMenu, contentMenu){
     this.contentMenu = contentMenu
     this.btnMenu = btnMenu
     this.btnsSubmenus = []
+    this.menuItems = []
     this.submenus = []
-    this.menuitens = [
+    this.menuAberto = false
+    this.cabecalhoBranco = false
+    this.menuListaitens = [
         {
             nome:'Home',
-            link:'#',
+            link:'#home',
             subItens:[],
-            classe:'Home'
+            classe:'Home',
         },
         {
             nome:'Serviços',
-            link:'#',
+            link:'#servicos',
             subItens:[],
             classe:'Servico'
         },
         {
             nome:'Projetos',
-            link:'#',
+            link:'#projetos',
             subItens:[
                 {
                     nome:'LandingPage',
@@ -106,19 +142,19 @@ function Menu(btnMenu, contentMenu){
         },
         {
             nome:'Cases',
-            link:'#',
+            link:'#cases',
             subItens:[],
             classe:'Case'
         },
         {
             nome:'Portfólio',
-            link:'#',
+            link:'#portfolio',
             subItens:[],
             classe:'Portfolio'
         },
         {
             nome:'Categoria',
-            link:'#',
+            link:'#categoria',
             subItens:[
                 {
                     nome:'FrontEnd',
@@ -133,13 +169,13 @@ function Menu(btnMenu, contentMenu){
         },
         {
             nome:'Sobre',
-            link:'#',
+            link:'#sobre',
             subItens:[],
             classe:'Sobre'
         },
         {
             nome:'Contato',
-            link:'#',
+            link:'#contato',
             subItens:[],
             classe:'Contato'
         }
@@ -148,7 +184,7 @@ function Menu(btnMenu, contentMenu){
 
     this.carregaItensMenu = (contentLista)=>{
         let listaItens = []
-        this.menuitens.forEach(e=>{
+        this.menuListaitens.forEach(e=>{
             listaItens.push(e)
             let li = document.createElement('li')
             let a = document.createElement('a')
@@ -208,7 +244,6 @@ function Menu(btnMenu, contentMenu){
         })    
     }
    
-
     this.toggleBtnMenu = ()=>{
         if(!this.btnMenu.classList.contains("btn-menu-open")){
             this.btnMenu.classList.add("btn-menu-open")
@@ -220,13 +255,49 @@ function Menu(btnMenu, contentMenu){
     }
 
     this.openMenu = ()=>{
+        var body = document.querySelector('body')
         if(this.contentMenu.classList.contains('content-menu-open')){
             this.contentMenu.classList.remove('content-menu-open')
-            this.logoClaro()
+            body.classList.remove('paralisa-body');
+
+            this.menuAberto = false;
+
+            if(this.cabecalhoBranco){
+                this.logoEscuro()
+            }else{
+                this.logoClaro()
+            }
+            
+
         }else{
             this.contentMenu.classList.add('content-menu-open')
+            body.classList.add('paralisa-body');
+            
+            this.menuAberto = true
+            
             this.logoEscuro()
         }
+    }
+
+    this.mudaCorCabecalho = (cabecalho,alturaCabecalho, posAtual)=>{
+
+        if(posAtual>alturaCabecalho){
+
+            this.cabecalhoBranco = true
+            cabecalho.style.backgroundColor = "#fff"
+            this.btnEscuro()
+            this.logoEscuro()
+            
+            
+        }else{
+            this.cabecalhoBranco = false
+            cabecalho.style.backgroundColor = "initial"
+            
+            this.btnClaro()
+            this.logoClaro()
+
+        }
+
     }
 
     //Muda cor logo
@@ -237,6 +308,15 @@ function Menu(btnMenu, contentMenu){
     this.logoClaro=()=>{
         let logoSpan = $('.logo #logo-span')
         logoSpan.css("color","#fff")
+    }
+    //Muda cor btnMenu
+    this.btnEscuro = ()=>{
+        let linhasBtn = $('.btn-menu .linha')
+        linhasBtn.css("background-color","#333333")
+    }
+    this.btnClaro = ()=>{
+        let linhasBtn = $('.btn-menu .linha')
+        linhasBtn.css("background-color","#ffffff")
     }
 
     //Eventos do menu
