@@ -28,7 +28,7 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: [inicio] 30px [inicio-temp] 1fr repeat(21, 10px 1fr) [fim-temp] 30px [fim];
-  grid-template-rows: [inicio-cabecalho] auto [fim-cabecalho] 0px [inicio-principal] auto [fim-principal] 40px [inicio-footet] auto [fim-footer];
+  grid-template-rows: [inicio-cabecalho] auto [fim-cabecalho] 0px [inicio-main] auto [fim-main] 40px [inicio-footet] auto [fim-footer];
   background-color: #efefef; }
 
 /*CABECALHO*/
@@ -210,13 +210,10 @@ img {
       .menu #footer-menu a span {
         color: #333333; }
 
-.grid-principal {
+.main {
   grid-column: inicio/fim;
-  grid-row: inicio-principal/fim-principal;
-  display: grid;
-  grid-template-columns: [inicio] 15px [inicio-principal] 1fr repeat(21, 10px 1fr) [fim-principal] 15px [fim];
-  grid-template-rows: [inicio-slider] 100vh [fim-slider] 30px [inicio-servicos] auto [fim-servicos] 30px [inicio-clientes] 100vh [fim-clientes] 30px; }
-  .grid-principal .btn-volta-topo {
+  grid-row: inicio-main/fim-main; }
+  .main .btn-volta-topo {
     height: 30px;
     width: 30px;
     background-color: #0af;
@@ -230,9 +227,9 @@ img {
     justify-content: center;
     align-items: center;
     cursor: pointer; }
-    .grid-principal .btn-volta-topo i {
+    .main .btn-volta-topo i {
       color: #fff; }
-  .grid-principal .btn-volta-topo:hover {
+  .main .btn-volta-topo:hover {
     opacity: .8; }
 
 .footer {

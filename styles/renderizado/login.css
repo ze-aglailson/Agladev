@@ -1,0 +1,10 @@
+.grid-login {
+  display: grid;
+  grid-template-columns: [inicio] 30px [inicio-container-login] 1fr repeat(21, 10px 1fr) [fim-container-login] 30px [fim];
+  grid-template-rows: [inicio-container-login] 100vh [fim-container-login]; }
+  .grid-login .container-login {
+    grid-column: inicio-container-login/fim-container-login;
+    grid-row: inicio-container-login/fim-container-login;
+    background-color: #00aaff; }
+
+/*# sourceMappingURL=login.css.map */

@@ -1,5 +1,5 @@
 <?php
-
+require_once('lib/Database/Conexao.php');
 class Padrao{
 
     private $conn;

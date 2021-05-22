@@ -29,7 +29,7 @@ class Core{
 
         
         call_user_func(array(new $controller, $acao), array(
-            'id' => $id
+            'id' => $id,
         ));
         
 

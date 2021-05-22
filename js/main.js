@@ -46,7 +46,15 @@ window.onload = function(){
         let alturaContentLogo = document.getElementById('content-logo-btn-menu').offsetHeight
         let menu = document.querySelector('.menu')
         menu.style.paddingTop = alturaContentLogo+"px"
+        //Espaçando a main da altura do cabecalho
+        var main = document.querySelector('.main')
+        main.style.marginTop = alturaCabecalho+"px"
+        //descontando o tamanho do cabecalho na home
+        var gridPrincipal = document.querySelector('.grid-principal')
+        if(gridPrincipal){
 
+            gridPrincipal.style.marginTop = -alturaCabecalho+"px"
+        }
         //Toggle botão volta topo
 
         window.addEventListener('scroll', function(){

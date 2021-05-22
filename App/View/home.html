@@ -1,50 +1,35 @@
-<section id="home" class="container-slider">
+<div class="grid-principal">
 
-</section>
+    <section id="home" class="container-slider">
+            
+    </section>
 
-<section id="servicos" class="container-servicos">
+    <section id="servicos" class="container-servicos">
 
-    <div class="title-sections title-servicos">
-        <h2>Serviços</h2>
-        <hr>
-    </div>
-    <div class="servicos">
-     
-        {% for servico in servicos %}
-        <article class="servico">
-            <div class="div-img">
-                <img src="{{servico.servicoImagem}}" alt="{{servico.servicoTitle}}">
-            </div>
-            <div class="div-titles">
-                <h2>{{servico.servicoTitle}}</h2>
-                <p>{{servico.servicoDescricao}}</p>
-            </div>
-        </article>
-        {% endfor %}
-    </div>
-</section>
+        <div class="title-sections title-servicos">
+            <h2>Serviços</h2>
+            <hr>
+        </div>
+        <div class="servicos">
+            
+            {% for servico in servicos %}
+            <article class="servico">
+                <div class="div-img">
+                    <img src="{{servico.servicoImagem}}" alt="{{servico.servicoTitle}}">
+                </div>
+                <div class="div-titles">
+                    <h2>{{servico.servicoTitle}}</h2>
+                    <p>{{servico.servicoDescricao}}</p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
 
-<section id="clientes" class="container-clientes">
-    <div class="title-sections title-clientes">
-        <h2>Clientes</h2>
-        <hr>
-    </div>
-</section>
-<!-- 
-<section id="cases" class="container-cases">
-
-</section>
-<section id="portfolio" class="container-portfolio">
-
-</section>
-<section id="categoria" class="container-categoria">
-
-</section>
-<section id="sobre" class="container-sobre">
-
-</section>
-<section id="contato" class="container-contato">
-
-</section>
-
- -->
+    <section id="clientes" class="container-clientes">
+        <div class="title-sections title-clientes">
+            <h2>Clientes</h2>
+            <hr>
+        </div>
+    </section>
+</div>

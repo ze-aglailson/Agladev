@@ -32,7 +32,7 @@ img{width: 100%;}
 	grid-template-columns: [inicio] 30px [inicio-temp] 1fr repeat(21, 10px 1fr) [fim-temp]30px[fim];
 	grid-template-rows: 
 		[inicio-cabecalho] auto [fim-cabecalho]0px
-		[inicio-principal] auto [fim-principal]40px
+		[inicio-main] auto [fim-main]40px
 		[inicio-footet]auto[fim-footer]
 		/*Continuar as rows conforme desenvovimento*/
 
@@ -255,18 +255,9 @@ img{width: 100%;}
 }
 
 // Parte dinamica do template
-.grid-principal{
+.main{
 	grid-column: inicio/fim;
-	grid-row: inicio-principal/fim-principal;
-
-	display: grid;
-	grid-template-columns: [inicio]15px [inicio-principal] 1fr repeat(21, 10px 1fr) [fim-principal] 15px[fim];
-	grid-template-rows: 
-	[inicio-slider] 100vh [fim-slider]30px
-	[inicio-servicos] auto [fim-servicos]30px
-	[inicio-clientes] 100vh [fim-clientes]30px
-
-						;
+	grid-row: inicio-main/fim-main;
 	.btn-volta-topo{
 		height: 30px;
 		width: 30px;
@@ -289,6 +280,8 @@ img{width: 100%;}
 		opacity: .8;
 	}
 }
+
+
 
 .footer{
 	grid-column: inicio/fim;
