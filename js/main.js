@@ -47,8 +47,8 @@ window.onload = function(){
         let menu = document.querySelector('.menu')
         menu.style.paddingTop = alturaContentLogo+"px"
         //Espaçando a main da altura do cabecalho
-        var main = document.querySelector('.main')
-        main.style.marginTop = alturaCabecalho+"px"
+        //var main = document.querySelector('.main')
+        //main.style.marginTop = alturaCabecalho+"px"
         //descontando o tamanho do cabecalho na home
         var gridPrincipal = document.querySelector('.grid-principal')
         if(gridPrincipal){
@@ -101,6 +101,98 @@ window.onload = function(){
         },500)
         
     }
+
+
+    //Formulario de login
+
+    var flogin = document.querySelector('.form-login')
+
+    function verificaCampos(campos){
+        let result = false
+
+        for(let i = 0; i < campos.length; i++){
+            let campo = campos[i]
+
+            if(campo.type !== "submit"){
+                
+                if(campo.value == ""){
+                    campo.classList.add('ipt-vazio')
+                    result = false
+                }else{
+                    campo.classList.remove('ipt-vazio')
+                    result = true
+                }
+            }
+
+        }
+
+        return result
+    }
+
+    $(flogin).submit(function(e){
+        e.preventDefault()
+        if(verificaCampos(this.elements)){
+            
+            email = $('#ipt-email').val()
+            senha = $('#ipt-senha').val()
+            let msg = $(".msg-retorno")
+            
+            $.ajax({
+                url: 'http://localhost/Projetos/AglaDev/login.php',
+                method:'POST',
+                data:{email:email,senha:senha},
+                dataType: 'json', //deve enviar em json
+                beforeSend : function(data){
+                    console.log("enviando...")
+                },
+                success: function(response)
+                {
+                    
+                    let load = $("#load-login")
+                    if(response.login.status){
+                        $(function(){
+                            load.fadeIn(700, function(){
+                                window.setTimeout(function(){
+                                    msg.fadeOut()
+                                },2000)
+                                window.location.href = 'painel/index.php'
+                            })
+                        })
+                    }
+                },
+                error:function(data, xhr, throwError){
+                    console.log("Erro ao fazer login, tente novamente!")
+                }
+                
+            }).done(function(response){
+                
+                msg.html("<p>"+response.login.mensagem+"</p>")
+                console.log(response)
+                $(function(){
+                    msg.fadeIn(700, function(){
+                        window.setTimeout(function(){
+                            msg.fadeOut()
+                        },2000)
+                    })
+                })
+            })
+
+        }else{
+            
+            msg.html("<p>Preencha todos os campos!</p>")
+            $(function(){
+                msg.fadeIn(700, function(){
+                    window.setTimeout(function(){
+                        msg.fadeOut()
+                    },2000)
+                })
+            })
+
+        }
+       
+
+    })
+    
     
 }
 

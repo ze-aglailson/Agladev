@@ -211,6 +211,7 @@ img {
         color: #333333; }
 
 .main {
+  margin-top: 66px;
   grid-column: inicio/fim;
   grid-row: inicio-main/fim-main; }
   .main .btn-volta-topo {

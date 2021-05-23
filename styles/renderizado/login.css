@@ -4,7 +4,93 @@
   grid-template-rows: [inicio-container-login] 100vh [fim-container-login]; }
   .grid-login .container-login {
     grid-column: inicio-container-login/fim-container-login;
-    grid-row: inicio-container-login/fim-container-login;
-    background-color: #00aaff; }
+    grid-row: inicio-container-login/fim-container-login; }
+    .grid-login .container-login #load-login {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center; }
+      .grid-login .container-login #load-login #icon-load {
+        margin: 50% auto;
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .grid-login .container-login #load-login #icon-load .c-loader {
+          border: 6px solid #e5e5e5;
+          border-top-color: #00aaff;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          animation: is-rotating 1s infinite; }
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn); } }
+    .grid-login .container-login .content-login {
+      background-color: #fff;
+      margin-top: 100px;
+      padding: 30px 0;
+      border-radius: 8px; }
+      .grid-login .container-login .content-login .title-login {
+        margin-bottom: 50px; }
+        .grid-login .container-login .content-login .title-login h2 {
+          margin-bottom: 20px;
+          color: #524e4e; }
+      .grid-login .container-login .content-login form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .grid-login .container-login .content-login form .form-group {
+          width: 100%;
+          padding: 0 30px;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 30px; }
+          .grid-login .container-login .content-login form .form-group label {
+            color: #fff;
+            background-color: #0af;
+            font-size: .9em;
+            padding: 10px;
+            flex-basis: 20%;
+            border-radius: 4px 0 0 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+          .grid-login .container-login .content-login form .form-group .input {
+            outline: none;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0 3px 3px 0;
+            color: #524e4e;
+            flex-basis: 80%; }
+          .grid-login .container-login .content-login form .form-group .ipt-vazio {
+            border-bottom: 1px solid red; }
+          .grid-login .container-login .content-login form .form-group button {
+            background-color: #0af;
+            color: #fff;
+            padding: 10px 35px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer; }
+    .grid-login .container-login .msg-retorno {
+      margin-top: 30px;
+      background-color: rgba(243, 58, 1, 0.897);
+      border-radius: 4px;
+      display: none; }
+      .grid-login .container-login .msg-retorno p {
+        color: #fff;
+        padding: 10px;
+        text-align: center; }
 
 /*# sourceMappingURL=login.css.map */

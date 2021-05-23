@@ -86,7 +86,7 @@
                 return $hash;
             }else{
     
-                throw new Exception("O email informado não existe no nosso Banco de dados!");
+                throw new Exception("O email informado não está cadastrado!");
                 return false;
                 
             }
@@ -104,6 +104,10 @@
         }
 
         public function login($email, $senha){
+            $result = array(
+                'login'=>'',
+                'mensagem'=>''
+            );
             try{
                 $dados = array();
                 $hash = $this->getPasswordHash($email);
@@ -117,17 +121,25 @@
                     ));
 
                     $dados = $resultado[0];
-
                     $this->setaDados($dados);
-                    return "Logado como :".$dados["pessoaNome"].' '.$dados["pessoaSobrenome"];
+                    
+                    $result['login'] = true;
+                    $result['mensagem'] = 'Logado com sucesso!';
 
                 }else{
-                    return "Senha inválida!";
+
+                    $result['login'] = false;
+                    $result['mensagem'] = 'Senha incorreta!';
+
                 }
 
             }catch(Exception $e){
-                return $e->getMessage();
+                $result['login'] = false;
+                $result['mensagem'] = $e->getMessage();
+
             }
+
+            return $result;
         }
  
 

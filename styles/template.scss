@@ -256,6 +256,7 @@ img{width: 100%;}
 
 // Parte dinamica do template
 .main{
+	margin-top: 66px; //66 altura do cabecalho
 	grid-column: inicio/fim;
 	grid-row: inicio-main/fim-main;
 	.btn-volta-topo{

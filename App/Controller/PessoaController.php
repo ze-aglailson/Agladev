@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class PessoaController{
 
     public function index(){
@@ -8,25 +8,43 @@ class PessoaController{
 
     }
 
-    public function login($dados){
+    public function login(){
         
         try{
-            $pessoa = new Pessoa;
-            $pessoa->login($dados);
-            $loader = new \Twig\Loader\FilesystemLoader('App/View');
-            $twig = new \Twig\Environment($loader);
-            $template = $twig->load('login.html');
+            
+            
+            if(isset($_SESSION['logado'])){
+                
+                
+                header('Location:painel/index.php');
 
-            //Dados que irão para a view
-            $parametros = array();
-            $parametros[''] = '';
+                
 
-            $conteudo = $template->render($parametros);
-            echo $conteudo;
+            }else{
+                
+                $loader = new \Twig\Loader\FilesystemLoader('App/View');
+                $twig = new \Twig\Environment($loader);
+                $template = $twig->load('login.html');
+                
+                //Dados que irão para a view
+                $parametros = array();
+                $parametros[''] = '';
+                
+                
+                $conteudo = $template->render($parametros);
+                echo $conteudo;
 
+            }
         }catch(Exception $e){
             echo $e->getMessage();
         }
+    }
+
+    public function logout(){
+
+        session_destroy();
+        header("location:index.php");
+
     }
     
 }
