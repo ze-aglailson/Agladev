@@ -5,18 +5,31 @@ class Conexao extends PDO{
 
    public function __construct()
    {
-      $db_driver = "mysql";
-      $db_host = "162.241.2.193";
-      $db_name = "ipuaon59_agladev";
-      $db_user = "ipuaon59_admin";
-      $db_password = "#jJ1234567891011";
+      $con_dev = array(
+         'driver'=>'mysql',
+         'host'=>'127.0.0.1',
+         'dbname'=>'agladev',
+         'dbuser'=>'root',
+         'password'=>'2909'
+      );
+      $con_producao = array(
+         'driver'=>'mysql',
+         'host'=>'162.241.2.193',
+         'dbname'=>'ipuaon59_agladev',
+         'dbuser'=>'ipuaon59_admin',
+         'password'=>'#jJ1234567891011'
+      );
+
+      unset($con_dev);
+
+      $con = isset($con_dev)?$con_dev:$con_producao;
 
       //informação do sistema
       $sistema_titulo = "AglaDev";
       $sistema_email = "jaglailson1@gmail.com";
 
       try{
-         self::$conn = new PDO("$db_driver:host=$db_host; dbname=$db_name;", $db_user, $db_password);
+         self::$conn = new PDO("{$con['driver']}:host={$con['host']}; dbname={$con['dbname']};", $con['dbuser'], $con['password']);
          self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          self::$conn->exec('SET NAMES utf8');
 
