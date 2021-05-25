@@ -143,7 +143,7 @@ window.onload = function(){
                 url: 'https://agladev.com/login.php',
                 method:'POST',
                 data:{email:email,senha:senha},
-                dataType: 'json', //deve enviar em json
+                dataType: 'json', 
                 beforeSend : function(data){
                     console.log("enviando...")
                 },
