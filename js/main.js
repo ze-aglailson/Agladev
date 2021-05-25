@@ -152,6 +152,7 @@ window.onload = function(){
                     
                     let load = $("#load-login")
                     if(response.login.status){
+                        msg.css('background-color','rgb(0, 255, 85)')
                         $(function(){
                             load.fadeIn(700, function(){
                                 window.setTimeout(function(){
@@ -169,11 +170,10 @@ window.onload = function(){
             }).done(function(response){
                 
                 msg.html("<p>"+response.login.mensagem+"</p>")
-                console.log(response)
                 $(function(){
                     msg.fadeIn(700, function(){
                         window.setTimeout(function(){
-                            //msg.fadeOut()
+                            msg.fadeOut()
                         },2000)
                     })
                 })
@@ -332,6 +332,7 @@ function Menu(btnMenu, contentMenu){
                         a.classList.add('item-submenu')
                         a.innerHTML = dados[i][nome]
                         li.appendChild(a)
+                        console.log('aqui')
                         contentSubmenu.appendChild(li)
                     }
                     

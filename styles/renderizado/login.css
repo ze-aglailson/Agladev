@@ -73,7 +73,8 @@
             border-bottom: 1px solid #ccc;
             border-radius: 0 3px 3px 0;
             color: #524e4e;
-            flex-basis: 80%; }
+            flex-basis: 80%;
+            font-size: .9em; }
           .grid-login .container-login .content-login form .form-group .ipt-vazio {
             border-bottom: 1px solid red; }
           .grid-login .container-login .content-login form .form-group button {
