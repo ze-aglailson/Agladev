@@ -1,14 +1,15 @@
 <?php
 
-    require_once('App/Core/Core.php');
+/*     require_once('App/Core/Core.php');
     require_once('lib/Database/Conexao.php');
     require_once('App/Controller/HomeController.php');
     require_once('App/Controller/PessoaController.php');
     require_once('App/Controller/ErroController.php');
     require_once('App/Model/Padrao.php');
-    require_once('App/Model/Pessoa.php');
-    require_once('App/Model/Servico.php');
+    require_once('App/Model/Pessoa.php'); */
+    require_once('config.php');
     require_once('vendor/autoload.php');
+    
 
 
     $template = file_get_contents('App/Template/estrutura.html');

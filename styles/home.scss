@@ -7,7 +7,9 @@
 	grid-template-rows: 
 	[inicio-slider] 100vh [fim-slider]30px
 	[inicio-servicos] auto [fim-servicos]30px
-	[inicio-clientes] 100vh [fim-clientes]30px;
+	[inicio-clientes] 100vh [fim-clientes]30px
+    [inicio-projetos] 100vh [fim-projetos]30px
+    ;
 }
 .container-slider{
     grid-column: inicio/fim;
@@ -106,5 +108,10 @@
 .container-clientes{
     grid-column: inicio-principal/fim-principal;
     grid-row:inicio-clientes/fim-clientes ;
+    background-color: #fff;
+}
+.container-projetos{
+    grid-column: inicio-principal/fim-principal;
+    grid-row:inicio-projetos/fim-projetos ;
     background-color: #fff;
 }

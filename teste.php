@@ -1,9 +1,9 @@
 <?php
 
-require_once('App/Model/Funcionario.php');
-require_once('App/Model/Cliente.php');
+require_once("config.php");
 
-    $f = new Funcionario();
+
+/*     $f = new Funcionario();
     $f->setPessoaNome('José');
     $f->setPessoaSobrenome('Aglailson');
     $f->setPessoaEmail('jaglailson1@gmail.com');
@@ -12,13 +12,16 @@ require_once('App/Model/Cliente.php');
     $f->setFuncionarioCargo(1);
     $f->setFuncionarioSetor(1);
 
-    /* echo $f->Cadastro(); */
+    
     
    
     $f->login('jaglailson1@gmail.com', 'aglailson');
 
-    echo $f;
+    echo $f; */
+
+    $pessoa = new Pessoa;
 
 
+    $pessoa->listar();
 
 ?>

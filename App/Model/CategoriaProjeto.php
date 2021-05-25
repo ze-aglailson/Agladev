@@ -1,22 +1,16 @@
 <?php
 
-    class CategoriaProjeto{
+    class CategoriaProjeto extends Padrao{
 
         public function listar(){
 
-            $conn = new Sql();
-            $result = $conn->select("SELECT * FROM CategoriaProjeto ORDER BY  categoriaProjetoCod ASC");
-            $dados = array();
+            $resultado = $this->select("SELECT * FROM CategoriaProjeto ORDER BY  categoriaProjetoCod ASC");
 
-            while($linha = $result->fetchAll(PDO::FETCH_ASSOC)){
-                $dados[] = $linha;
-            }
-
-            if(!$dados){
+            if(!$resultado){
                 throw new Exception("Nenhuma categoria de produto cadastrada"); 
             }
 
-            return $dados;
+            return $resultado;
         }
 
     }

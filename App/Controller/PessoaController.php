@@ -43,7 +43,7 @@ class PessoaController{
     public function logout(){
 
         session_destroy();
-        header("location:index.php");
+        header("location:?pagina=pessoa&metodo=login");
 
     }
     

@@ -1,5 +1,19 @@
 <?php
 
+    require_once("Autoload.php");
+    define('ROOT', dirname(__FILE__));
+    
+    $autoload = new Autoload;
+    $autoload->setPath(ROOT);
+    $autoload->setExtensao('php');
+
+    spl_autoload_register(array($autoload, 'loadCore'));
+    spl_autoload_register(array($autoload, 'loadController'));
+    spl_autoload_register(array($autoload, 'loadModel'));
+    spl_autoload_register(array($autoload, 'loadConexao'));
+
+
+/* 
     spl_autoload_register(function($className){
 
         $dirs = array(
@@ -19,6 +33,6 @@
 
             }
         }
-    })
+    }) */
 
 ?>

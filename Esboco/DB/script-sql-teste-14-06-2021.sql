@@ -153,6 +153,14 @@ CREATE TABLE IF NOT EXISTS `agladev`.`CategoriaProjeto` (
   PRIMARY KEY (`categoriaprojetoCod`))
 ENGINE = InnoDB;
 
+INSERT INTO CategoriaProjeto VALUES
+(NULL,'Site'),
+(NULL,'Sistema Web'),
+(NULL,'LandingPage'),
+(NULL,'E-commerce');
+
+SELECT * FROM CategoriaProjeto;
+
 
 -- -----------------------------------------------------
 -- Table `agladev`.`Projeto`
@@ -186,6 +194,11 @@ CREATE TABLE IF NOT EXISTS `agladev`.`Projeto` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+INSERT INTO Projeto VALUES
+(NULL, 'Site Bralux','Desenvolvimento de site institucional','2021-07-01','2021-09-23',2,1,2),
+(NULL, 'Sistema Emissor de nfe','Sitema para emissão de notas fiscais','2021-03-24','2021-05-21',2,1,3);
+SELECT * FROM Projeto;
 
 
 -- -----------------------------------------------------
@@ -264,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `agladev`.`Servico` (
 ENGINE = InnoDB;
 
 INSERT INTO Servico VALUES
-(NULL,'','',''),
+(NULL,'Desenvolvimento Web','Desenvolvimento de sites totalmente responsivo e gerenciavel por meio de CMS. Sites robusto em quesito de layout e segurança para maior comodidade do clientes!','img/svg/servico-site.svg'),
 (NULL,'','',''),
 (NULL,'','','');
 

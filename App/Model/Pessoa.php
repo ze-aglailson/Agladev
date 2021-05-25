@@ -141,6 +141,14 @@
 
             return $result;
         }
+
+        public function listar(){
+            
+            $resultado = $this->select('SELECT * FROM Pessoa ORDER BY pessoaCod');
+
+            return $resultado;
+
+        }
  
 
        

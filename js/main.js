@@ -131,11 +131,13 @@ window.onload = function(){
 
     $(flogin).submit(function(e){
         e.preventDefault()
+
+        var msg = $(".msg-retorno") ?msg = $(".msg-retorno"):""
+
         if(verificaCampos(this.elements)){
             
             email = $('#ipt-email').val()
             senha = $('#ipt-senha').val()
-            let msg = $(".msg-retorno")
             
             $.ajax({
                 url: 'http://localhost/Projetos/AglaDev/login.php',
@@ -153,7 +155,7 @@ window.onload = function(){
                         $(function(){
                             load.fadeIn(700, function(){
                                 window.setTimeout(function(){
-                                    msg.fadeOut()
+                                    load.fadeOut()
                                 },2000)
                                 window.location.href = 'painel/index.php'
                             })
@@ -171,7 +173,7 @@ window.onload = function(){
                 $(function(){
                     msg.fadeIn(700, function(){
                         window.setTimeout(function(){
-                            msg.fadeOut()
+                            //msg.fadeOut()
                         },2000)
                     })
                 })
@@ -226,6 +228,12 @@ function Menu(btnMenu, contentMenu){
             link:'#clientes',
             subItens:[],
             classe:'Cliente'
+        },
+        {
+            nome:'Projetos',
+            link:'#projetos',
+            subItens:[],
+            classe:'Projeto'
         },
         /* {
             nome:'Cases',
@@ -296,7 +304,7 @@ function Menu(btnMenu, contentMenu){
 
     this.carregaSubItemsMenu=(contentSubmenu,btnSubmenu,classe)=>{
         $.ajax({
-            url:'http://localhost/Projetos/AglaDev/api/v1/'+classe+'/listar',
+            url:'https://agladev.com/api/v1/'+classe+'/listar',
             method:'GET',
             dataType:'json'
         }).done(function(result){
@@ -310,6 +318,7 @@ function Menu(btnMenu, contentMenu){
                 
                 if(result['status'] != 'erro'){
                     let dados = result['dados'][0]
+                    console.log(dados)
                     btnSubmenu.classList.add('btn-submenu')
                     let icon = document.createElement('span')
                     icon.classList.add('btn-submenu-icon')
