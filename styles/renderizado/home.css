@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 90px;
+    margin-top: 110px;
     padding: 0 10px; }
     .container-slider .content-titles h2 {
       font-size: 1.5em;
@@ -31,26 +31,11 @@
       background-color: rgba(255, 255, 255, 0.2);
       display: flex;
       justify-content: center;
-      border-radius: 3px;
-      opacity: 0;
-      transition: .6s;
-      transform: translate3d(-50px, 0, 0); }
+      border-radius: 3px; }
       .container-slider .content-titles #div-subtitulo p {
         color: #fff;
         transition: .6s;
         text-align: center; }
-      .container-slider .content-titles #div-subtitulo p::after {
-        content: '|';
-        margin-left: 5px;
-        opacity: 1;
-        animation: pisca .4s infinite;
-        color: #333;
-        font-weight: bold; }
-@keyframes pisca {
-  0%,100% {
-    opacity: 1; }
-  50% {
-    opacity: 0; } }
   .container-slider .content-buttons {
     width: 100%;
     display: flex;

@@ -40,8 +40,8 @@ window.onload = function(){
             
         })
         //Efeito maquina de escreve
-        let frase = document.querySelector("#subtitulo")
-        escreveFrase(frase);
+        /* let frase = document.querySelector("#subtitulo")
+        escreveFrase(frase); */
     }());
 
     (function ajustes(){
@@ -58,10 +58,7 @@ window.onload = function(){
 
             gridPrincipal.style.marginTop = -alturaCabecalho+"px"
         }
-        //Padding espaçamento conttent-title
-        var titles = document.querySelector('.content-titles')
-        titles.style.paddingTop = alturaCabecalho+"px"
-        console.log(titles)
+
         //Toggle botão volta topo
 
         window.addEventListener('scroll', function(){
@@ -108,25 +105,6 @@ window.onload = function(){
         },500)
         
     }
-    //Animação maquina de escrevr
-    function escreveFrase(elemento){
-        const textArray = elemento.innerHTML.split('')
-        elemento.innerHTML = "";
-        var divSubtitulo = document.getElementById('div-subtitulo');
-        divSubtitulo.style.opacity= 1;
-        divSubtitulo.style.transform = 'translate3d(0,0,0)';
-        textArray.forEach(function(letra, i){
-
-            setTimeout(function(){
-
-                elemento.innerHTML += letra
-
-            }, 60 * i)
-
-        })
-    }
-
-
     //Formulario de login
 
     var flogin = document.querySelector('.form-login')
@@ -164,7 +142,7 @@ window.onload = function(){
             senha = $('#ipt-senha').val()
             
             $.ajax({
-                url: 'https://www.agladev.com/login.php',
+                url: 'https://agladev.com/login.php',
                 method:'POST',
                 data:{email:email,senha:senha},
                 dataType: 'json', 
@@ -328,7 +306,7 @@ function Menu(btnMenu, contentMenu){
 
     this.carregaSubItemsMenu=(contentSubmenu,btnSubmenu,classe)=>{
         $.ajax({
-            url:'https://www.agladev.com/api/v1/'+classe+'/listar',
+            url:'http://localhost/Projetos/AglaDev/api/v1/'+classe+'/listar',
             method:'GET',
             dataType:'json'
         }).done(function(result){

@@ -24,7 +24,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 90px;
+        margin-top: 110px;
         padding: 0 10px;
 
         h2{
@@ -40,26 +40,11 @@
             display: flex;
             justify-content: center;
             border-radius: 3px;
-            opacity: 0;
-            transition: .6s;
-            transform: translate3d(-50px,0,0);
 
             p{
                 color: #fff;
                 transition: .6s;
                 text-align: center;
-            }
-            p::after{
-                content: '|';
-                margin-left: 5px;
-                opacity: 1;
-                animation:pisca .4s infinite;
-                color: #333;
-                font-weight: bold;
-            }
-            @keyframes pisca {
-                0%,100%{opacity: 1;}
-                50%{opacity: 0;}
             }
         }
     }
