@@ -142,7 +142,7 @@ window.onload = function(){
             senha = $('#ipt-senha').val()
             
             $.ajax({
-                url: 'https://agladev.com/login.php',
+                url: 'https://www.agladev.com/login.php',
                 method:'POST',
                 data:{email:email,senha:senha},
                 dataType: 'json', 
