@@ -74,7 +74,7 @@ window.onload = function(){
             posiScrollY = window.scrollY
             time = 30
             var intervalo = setInterval(function(){
-
+                //v
                 if(posiScrollY > 0){
                     posiScrollY-=time;
                     window.scrollTo(0,posiScrollY)
