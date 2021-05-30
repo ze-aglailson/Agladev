@@ -6,12 +6,68 @@
   grid-template-rows: [inicio-slider] 100vh [fim-slider] 30px [inicio-servicos] auto [fim-servicos] 30px [inicio-clientes] 100vh [fim-clientes] 30px [inicio-projetos] 100vh [fim-projetos] 30px; }
 
 .container-slider {
+  position: relative;
   grid-column: inicio/fim;
   grid-row: inicio-slider/fim-slider;
   background: linear-gradient(rgba(46, 49, 49, 0.8), rgba(46, 49, 49, 0.8)), url(../../img/jpg/cabecalho1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
+  .container-slider .content-titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+    padding: 0 10px; }
+    .container-slider .content-titles h2 {
+      font-size: 1.5em;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 60px; }
+    .container-slider .content-titles #div-subtitulo {
+      width: 90%;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      display: flex;
+      justify-content: center;
+      border-radius: 3px;
+      opacity: 0;
+      transition: .6s;
+      transform: translate3d(-50px, 0, 0); }
+      .container-slider .content-titles #div-subtitulo p {
+        color: #fff;
+        transition: .6s;
+        text-align: center; }
+      .container-slider .content-titles #div-subtitulo p::after {
+        content: '|';
+        margin-left: 5px;
+        opacity: 1;
+        animation: pisca .4s infinite;
+        color: #333;
+        font-weight: bold; }
+@keyframes pisca {
+  0%,100% {
+    opacity: 1; }
+  50% {
+    opacity: 0; } }
+  .container-slider .content-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+    .container-slider .content-buttons #btn-orcamento {
+      color: #fff;
+      background-color: #00AAFF;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      font-size: .8em;
+      cursor: pointer; }
 
 /*CONFIGURAÇÕES SEÇÃO DE SERVIÇOS*/
 .title-sections {
