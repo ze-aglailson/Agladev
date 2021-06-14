@@ -107,11 +107,6 @@ window.onload = function(){
     }
     //Animações na section serviços
     //btn mouse
-
-    (function(){
-
-    }())
-
     //Scroll serviços
     (function(){
         var servicos = document.querySelectorAll('.servico');
