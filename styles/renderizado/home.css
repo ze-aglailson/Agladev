@@ -12,13 +12,15 @@
   background: linear-gradient(rgba(46, 49, 49, 0.8), rgba(46, 49, 49, 0.8)), url(../../img/jpg/cabecalho1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  display: flex;
+  flex-direction: column; }
   .container-slider .content-titles {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 110px;
+    margin-top: 170px;
     padding: 0 10px; }
     .container-slider .content-titles h2 {
       font-size: 1.5em;
@@ -39,21 +41,51 @@
   .container-slider .content-buttons {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
     left: 0;
-    bottom: 0; }
+    bottom: 0;
+    padding-bottom: 20px; }
     .container-slider .content-buttons #btn-orcamento {
       color: #fff;
       background-color: #00AAFF;
-      padding: 10px 15px;
-      margin-bottom: 20px;
+      padding: 15px 15px;
+      margin-bottom: 60px;
       border-radius: 3px;
       text-transform: uppercase;
       font-size: .8em;
       cursor: pointer; }
-
+    .container-slider .content-buttons #btn-mouse {
+      width: 20px;
+      height: 30px;
+      border: 1px solid #0af;
+      display: flex;
+      justify-content: center;
+      border-radius: 10px;
+      align-items: center;
+      padding: 1px;
+      background-color: transparent; }
+      .container-slider .content-buttons #btn-mouse span {
+        width: 2px;
+        height: 4px;
+        background-color: #0af;
+        animation: mouse 1.2s infinite;
+        transition: 1s; }
+@keyframes mouse {
+  0% {
+    transform: translateY(-3px);
+    opacity: 0; }
+  50% {
+    transform: translateY(-6px);
+    opacity: .0; }
+  75% {
+    transform: translateY(-8px);
+    opacity: .5; }
+  100% {
+    transform: translateY(0px);
+    opacity: 1; } }
 /*CONFIGURAÇÕES SEÇÃO DE SERVIÇOS*/
 .title-sections {
   width: 100%;
@@ -97,18 +129,18 @@
           width: 200px;
           stroke: #333;
           stroke-width: 1px;
-          /*    transition: .5s;
-             opacity: 0.7;
-             transform: translateX(30px); */ }
+          transition: .5s;
+          opacity: 0.7;
+          transform: translateX(30px); }
         .container-servicos .servicos .servico .div-img .img-zoom {
           transform: scale(1.09);
           transform: translateX(0); }
       .container-servicos .servicos .servico .div-titles {
         text-align: center;
         padding: 10px;
-        /* transform: translateX(-100px);
+        transform: translateX(-100px);
         transition: .5s;
-        opacity: 0; */ }
+        opacity: 0; }
       .container-servicos .servicos .servico .div-titles-active {
         transform: translateX(0);
         opacity: 1; }

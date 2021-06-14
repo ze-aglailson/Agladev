@@ -105,6 +105,39 @@ window.onload = function(){
         },500)
         
     }
+    //Animações na section serviços
+    //btn mouse
+
+    (function(){
+
+    }())
+
+    //Scroll serviços
+    (function(){
+        var servicos = document.querySelectorAll('.servico');
+        var offset = window.innerHeight * 3 /4
+        function animaScroll(){
+            var docTop = window.scrollY
+            servicos.forEach(function(e){
+                var divTitle = e.querySelector('.div-titles')
+                var imgZoom = e.querySelector('.div-img img')
+                var itemTop = e.offsetTop
+
+                if(docTop > itemTop - offset){
+                    divTitle.classList.add('div-titles-active');
+                    imgZoom.classList.add('img-zoom');
+    
+                }else{
+                    divTitle.classList.remove('div-titles-active');
+                    imgZoom.classList.remove('img-zoom');
+                }
+            })
+        }
+        animaScroll()
+        window.addEventListener('scroll', function(){
+            animaScroll()
+        })
+    }())
     //Formulario de login
 
     var flogin = document.querySelector('.form-login')
@@ -142,7 +175,7 @@ window.onload = function(){
             senha = $('#ipt-senha').val()
             
             $.ajax({
-                url: 'https://www.agladev.com/login.php',
+                url: 'https://agladev.com/login.php',
                 method:'POST',
                 data:{email:email,senha:senha},
                 dataType: 'json', 
@@ -306,7 +339,7 @@ function Menu(btnMenu, contentMenu){
 
     this.carregaSubItemsMenu=(contentSubmenu,btnSubmenu,classe)=>{
         $.ajax({
-            url:'http://localhost/Projetos/AglaDev/api/v1/'+classe+'/listar',
+            url:'https://agladev.com/api/v1/'+classe+'/listar',
             method:'GET',
             dataType:'json'
         }).done(function(result){
