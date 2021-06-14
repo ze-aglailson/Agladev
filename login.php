@@ -2,6 +2,7 @@
 require_once("App/Controller/PessoaController.php");
 require_once("App/Model/Padrao.php");
 require_once("App/Model/Pessoa.php");
+require_once("config.php");
 
     header('Content-Type: application/json');
     
