@@ -2,7 +2,7 @@
 /*CONFIGURAÇÕES SEÇÃO DE SERVIÇOS*/
 .grid-principal {
   display: grid;
-  grid-template-columns: [inicio] 15px [inicio-principal] 1fr repeat(21, 10px 1fr) [fim-principal] 15px [fim];
+  grid-template-columns: [inicio] 25px [inicio-principal] 1fr repeat(21, 10px 1fr) [fim-principal] 25px [fim];
   grid-template-rows: [inicio-slider] 100vh [fim-slider] 30px [inicio-servicos] auto [fim-servicos] 30px [inicio-clientes] 100vh [fim-clientes] 30px [inicio-projetos] 100vh [fim-projetos] 30px; }
 
 .container-slider {
@@ -51,7 +51,7 @@
     .container-slider .content-buttons #btn-orcamento {
       color: #fff;
       background-color: #00AAFF;
-      padding: 15px 15px;
+      padding: 10px 15px;
       margin-bottom: 60px;
       border-radius: 3px;
       text-transform: uppercase;
@@ -134,7 +134,8 @@
           transform: translateX(30px); }
         .container-servicos .servicos .servico .div-img .img-zoom {
           transform: scale(1.09);
-          transform: translateX(0); }
+          transform: translateX(0);
+          opacity: 1; }
       .container-servicos .servicos .servico .div-titles {
         text-align: center;
         padding: 10px;
@@ -159,6 +160,83 @@
 .container-projetos {
   grid-column: inicio-principal/fim-principal;
   grid-row: inicio-projetos/fim-projetos;
-  background-color: #fff; }
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px; }
+  .container-projetos .content-projetos {
+    display: flex;
+    flex-direction: column; }
+    .container-projetos .content-projetos .projeto {
+      width: 100%;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 0 8px;
+      padding-bottom: 8px;
+      flex: 1;
+      margin-bottom: 20px; }
+      .container-projetos .content-projetos .projeto .cabecalho-projeto {
+        height: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 6px;
+        cursor: pointer; }
+        .container-projetos .content-projetos .projeto .cabecalho-projeto span {
+          color: #6f7c81;
+          font-size: 8px; }
+          .container-projetos .content-projetos .projeto .cabecalho-projeto span i:first-child {
+            margin-right: 5px; }
+        .container-projetos .content-projetos .projeto .cabecalho-projeto .title-projeto {
+          color: #6f7c81;
+          font-size: .8em;
+          flex: 1;
+          text-align: center; }
+      .container-projetos .content-projetos .projeto .content-img-projeto-detalhes {
+        width: 100%;
+        height: 225px;
+        overflow: hidden;
+        position: relative; }
+        .container-projetos .content-projetos .projeto .content-img-projeto-detalhes .img-projeto {
+          display: flex;
+          width: 100%;
+          overflow: hidden;
+          height: 100%;
+          transition: .4s;
+          justify-content: center;
+          align-items: flex-end;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center; }
+      .container-projetos .content-projetos .projeto .content-img-projeto-detalhes:hover .img-projeto {
+        transform: scale(1.05); }
+      .container-projetos .content-projetos .projeto .content-img-projeto-detalhes:hover .detalhes-projeto {
+        transform: translateY(0px); }
+      .container-projetos .content-projetos .projeto .detalhes-projeto {
+        width: 100%;
+        height: 60px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: .4s;
+        opacity: 1;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(60px);
+        z-index: 2; }
+        .container-projetos .content-projetos .projeto .detalhes-projeto .descricao-projeto {
+          flex: 1;
+          color: #333;
+          font-size: .8em;
+          margin-right: 10px;
+          padding: 0 5px;
+          border-left: 1px solid #0af; }
+        .container-projetos .content-projetos .projeto .detalhes-projeto .demo-projeto {
+          padding: 8px 15px;
+          background-color: #00AAFF;
+          color: #ffffff;
+          border-radius: 3px;
+          font-size: .8em;
+          cursor: pointer; }
 
 /*# sourceMappingURL=home.css.map */

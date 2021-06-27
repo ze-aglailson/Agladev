@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="195"
+   height="195"
+   viewBox="0 0 51.59375 51.593751"
+   version="1.1"
+   id="svg3895"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/opt/lampp/htdocs/Projetos/AglaDev/img/png/icon.png"
+   inkscape:export-xdpi="720"
+   inkscape:export-ydpi="720">
+  <defs
+     id="defs3889" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4929687"
+     inkscape:cx="9.4584965"
+     inkscape:cy="52.714613"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1314"
+     inkscape:window-height="704"
+     inkscape:window-x="52"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3892">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-245.40623)">
+    <g
+       id="g1511"
+       transform="matrix(1.3201377,0,0,1.3201377,-3.1205732,-91.665712)">
+      <path
+         sodipodi:nodetypes="cscccsccc"
+         inkscape:connector-curvature="0"
+         id="path5317-6-5"
+         d="m 4.1222392,255.88852 c 0,0 -1.0735556,0 -1.0735556,1.07356 v 13.95624 l 2.1471095,-8.58847 v -3.22065 c 0,0 0,-1.03211 1.0763554,-1.03601 l 13.9533955,-0.0376 v -2.14711 z"
+         style="fill:#00aaff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cscccsccc"
+         inkscape:connector-curvature="0"
+         id="path5317-6-5-3"
+         d="m 39.6875,293.8553 c 0,0 1.073559,0 1.073559,-1.07357 v -13.95621 l -2.14711,8.58844 v 3.22066 c 0,0 0,1.0321 -1.076357,1.036 l -13.953435,0.0377 v 2.14709 z"
+         style="fill:#2e5678;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         y="289.06311"
+         x="3.0398908"
+         height="4.792243"
+         width="4.792243"
+         id="rect1505"
+         style="opacity:0.99500002;fill:#00aaff;fill-opacity:1;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:normal" />
+      <rect
+         y="255.88849"
+         x="35.977612"
+         height="4.792243"
+         width="4.792243"
+         id="rect1505-6"
+         style="opacity:0.99500002;fill:#2e5678;fill-opacity:1;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:normal" />
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1532"
+       style="font-style:normal;font-weight:normal;font-size:37.33333206px;line-height:0.69999999;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2e5678;fill-opacity:1;stroke:none"
+       transform="matrix(1.0374853,0,0,1.0374853,-70.093074,195.93708)"><flowRegion
+         id="flowRegion1534"
+         style="line-height:0.69999999;fill:#2e5678;fill-opacity:1"><rect
+           id="rect1536"
+           width="85"
+           height="95"
+           x="50"
+           y="60"
+           style="line-height:0.69999999;fill:#2e5678;fill-opacity:1" /></flowRegion><flowPara
+         id="flowPara1540"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.69999999;font-family:'Squada One';-inkscape-font-specification:'Squada One';text-align:center;text-anchor:middle;fill:#2e5678;fill-opacity:1"><flowSpan
+   id="flowSpan4484"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.69999999;font-family:'Squada One';-inkscape-font-specification:'Squada One';text-align:center;text-anchor:middle;fill:#00aaff;fill-opacity:1">A</flowSpan>D</flowPara></flowRoot>  </g>
+</svg>
