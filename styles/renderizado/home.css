@@ -3,7 +3,7 @@
 .grid-principal {
   display: grid;
   grid-template-columns: [inicio] 25px [inicio-principal] 1fr repeat(21, 10px 1fr) [fim-principal] 25px [fim];
-  grid-template-rows: [inicio-slider] 100vh [fim-slider] 30px [inicio-servicos] auto [fim-servicos] 30px [inicio-clientes] 100vh [fim-clientes] 30px [inicio-projetos] 100vh [fim-projetos] 30px; }
+  grid-template-rows: [inicio-slider] 100vh [fim-slider] 30px [inicio-servicos] auto [fim-servicos] 30px [inicio-clientes] 100vh [fim-clientes] 30px [inicio-projetos] auto [fim-projetos] 30px; }
 
 .container-slider {
   position: relative;

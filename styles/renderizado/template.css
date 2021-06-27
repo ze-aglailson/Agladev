@@ -28,7 +28,7 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: [inicio] 30px [inicio-temp] 1fr repeat(21, 10px 1fr) [fim-temp] 30px [fim];
-  grid-template-rows: [inicio-cabecalho] auto [fim-cabecalho] 0px [inicio-main] auto [fim-main] 40px [inicio-footet] auto [fim-footer];
+  grid-template-rows: [inicio-cabecalho] auto [fim-cabecalho] 0px [inicio-main] auto [fim-main] 40px [inicio-footer] auto [fim-footer];
   background-color: #efefef; }
 
 /*CABECALHO*/
