@@ -10,13 +10,16 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1080"
+   width="800"
    height="600"
-   viewBox="0 0 285.74999 158.75"
+   viewBox="0 0 211.66666 158.75"
    version="1.1"
    id="svg2101"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   sodipodi:docname="thumnail.svg">
+   sodipodi:docname="thumbnail.svg"
+   inkscape:export-filename="/opt/lampp/htdocs/Projetos/AglaDev/img/seo/svg/thumnail.png"
+   inkscape:export-xdpi="720"
+   inkscape:export-ydpi="720">
   <defs
      id="defs2095">
     <linearGradient
@@ -76,8 +79,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="66.303228"
-     inkscape:cy="199.37069"
+     inkscape:cx="353.66106"
+     inkscape:cy="210.85964"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -106,7 +109,7 @@
      transform="translate(0,-138.24998)">
     <image
        y="126.16637"
-       x="-2.1894531"
+       x="-39.231121"
        id="image2718"
        xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
 ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4e
@@ -5047,20 +5050,22 @@ CDKLkeG93a242QJCgEOEr3v4xngqY4rNRz//2Q==
        id="rect6591"
        width="316.97083"
        height="201.03143"
-       x="-15.610413"
+       x="-52.652081"
        y="117.10926" />
     <path
        style="fill:#00aaff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -1.589003e-7,296.99998 254.00001,254.66665 285.75,138.24998 v 158.75 z"
+       d="M -6.733304,280.162 193.38515,246.80893 218.39997,155.08796 V 300.7995 L -7.4083367,300.00575 Z"
        id="path918"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc" />
     <path
        style="fill:#2e5678;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 285.75,138.24998 31.750001,180.5833 2.7589003e-6,296.99998 v -158.75 z"
+       d="M 218.39997,155.08796 18.281508,188.44103 -6.7332998,280.162 -7.2624665,133.92129 218.81042,133.39213 Z"
        id="path918-3"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc" />
     <g
-       transform="matrix(1.8056339,0,0,1.8056339,23.328738,-278.18081)"
+       transform="matrix(1.4226011,0,0,1.4226011,11.646663,-173.00452)"
        id="layer1-6"
        inkscape:label="Camada 1">
       <flowRoot
@@ -5152,16 +5157,16 @@ CDKLkeG93a242QJCgEOEr3v4xngqY4rNRz//2Q==
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:48.51053238px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2e5678;fill-opacity:1;stroke:none;stroke-width:1.29938924"
-       x="70.521652"
-       y="229.46155"
+       style="font-style:normal;font-weight:normal;font-size:38.21989441px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2e5678;fill-opacity:1;stroke:none;stroke-width:1.02374709"
+       x="48.828449"
+       y="226.95064"
        id="text1145"><tspan
          sodipodi:role="line"
          id="tspan1143"
-         x="70.521652"
-         y="229.46155"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Squada One';-inkscape-font-specification:'Squada One';fill:#2e5678;fill-opacity:1;stroke-width:1.29938924"><tspan
-   style="fill:#00aaff;fill-opacity:1;stroke-width:1.29938924"
+         x="48.828449"
+         y="226.95064"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Squada One';-inkscape-font-specification:'Squada One';fill:#2e5678;fill-opacity:1;stroke-width:1.02374709"><tspan
+   style="fill:#00aaff;fill-opacity:1;stroke-width:1.02374709"
    id="tspan1763">Agla</tspan>Dev</tspan></text>
     <flowRoot
        xml:space="preserve"
@@ -5175,23 +5180,19 @@ CDKLkeG93a242QJCgEOEr3v4xngqY4rNRz//2Q==
            x="200"
            y="400" /></flowRegion><flowPara
          id="flowPara1005"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666794px;font-family:'Squada One';-inkscape-font-specification:'Squada One'" /></flowRoot>    <rect
-       style="opacity:0.95999995;fill:#333333;fill-opacity:1;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:normal"
-       id="rect6593"
-       width="5.2916665"
-       height="11.641666"
-       x="348.72083"
-       y="354.14996" />
-    <text
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666794px;font-family:'Squada One';-inkscape-font-specification:'Squada One'" /></flowRoot>    <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.76111126px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:0.94117647;stroke:none;stroke-width:1.29938924"
-       x="79.430153"
-       y="261.74066"
-       id="text1145-3"><tspan
+       style="font-style:normal;font-weight:normal;font-size:6.11473083px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:0.94117647;stroke:none;stroke-width:1.02374709"
+       x="55.528091"
+       y="248.94284"
+       id="text1145-3"
+       inkscape:export-filename="/opt/lampp/htdocs/Projetos/AglaDev/img/seo/png/thumbnail.png"
+       inkscape:export-xdpi="720"
+       inkscape:export-ydpi="720"><tspan
          sodipodi:role="line"
          id="tspan1143-6"
-         x="79.430153"
-         y="261.74066"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87777805px;font-family:'Squada One';-inkscape-font-specification:'Squada One';fill:#333333;fill-opacity:0.94117647;stroke-width:1.29938924">Soluções em Desenvolvimento Web</tspan></text>
+         x="55.528091"
+         y="248.94284"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.78238487px;font-family:'Squada One';-inkscape-font-specification:'Squada One';fill:#333333;fill-opacity:0.94117647;stroke-width:1.02374709">Soluções em Desenvolvimento Web</tspan></text>
   </g>
 </svg>
