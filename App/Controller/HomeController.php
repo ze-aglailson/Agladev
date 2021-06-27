@@ -7,6 +7,8 @@ class HomeController{
         try{
             $servico = new Servico;
             $listaServicos = $servico->listaTodos();
+            $projeto = new Projeto;
+            $listaProjetos = $projeto->listaTodos();
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('home.html');
@@ -14,6 +16,7 @@ class HomeController{
             //Dados que irão para a view
             $parametros = array();
             $parametros['servicos'] = $listaServicos;
+            $parametros['projetos'] = $listaProjetos;
 
             $conteudo = $template->render($parametros);
             echo $conteudo;

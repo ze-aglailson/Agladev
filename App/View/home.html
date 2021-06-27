@@ -58,6 +58,7 @@
             <hr>
         </div>
     </section>
+
     <section id="projetos" class="container-projetos">
         <div class="title-sections title-projetos">
             <h2>Projetos</h2>
@@ -65,31 +66,34 @@
         </div>
 
         <section class="content-projetos">
-            <article class="projeto projeto-01">
+            {% for projeto in projetos%}
 
-                <header class="cabecalho-projeto">
-                    <span>
-                        <i class="fas fa-circle"></i>
-                        <i class="fas fa-circle"></i>
-                    </span>
-                    <h2 class="title-projeto">Página de venda</h2>    
-                </header>
+                <article class="projeto projeto-0{{projeto.projetoCod}}">
 
-                <div class="content-img-projeto-detalhes">
-                    <div class="detalhes-projeto">
+                    <header class="cabecalho-projeto">
+                        <span>
+                            <i class="fas fa-circle"></i>
+                            <i class="fas fa-circle"></i>
+                        </span>
+                        <h2 class="title-projeto">{{projeto.projetoTitulo}}</h2>    
+                    </header>
 
-                        <p class="descricao-projeto">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, fugit!
-                        </p>
-                        <a href="#" target="_blank"class="demo-projeto">ver</a>
+                    <div class="content-img-projeto-detalhes">
+                        <div class="detalhes-projeto">
 
+                            <p class="descricao-projeto">
+                                {{projeto.projetoDescricao}}
+                            </p>
+                            <a href="#" target="_blank"class="demo-projeto">ver</a>
+
+                        </div>
+                        <div class="img-projeto" style="background-image: url({{projeto.projetoImg}});">
+
+                        </div>
                     </div>
-                    <div class="img-projeto" style="background-image: url(img/png/projeto1.png);">
 
-                    </div>
-                </div>
-
-            </article>
+                </article>
+            {% endfor %}
         </section>
 
     </section>

@@ -1,11 +1,11 @@
 <?php
     class Projeto extends Padrao{
         
-        public function listar(){
+        public function listaTodos(){
             
-            $resultado = $this->select('SELECT * FROM Projeto ORDER BY projetoCod');
+            $result = $this->select('SELECT * FROM Projeto ORDER BY projetoCod ASC');
 
-            return $resultado;
+            return $result;
 
         }
  
