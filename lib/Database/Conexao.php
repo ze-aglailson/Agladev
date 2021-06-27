@@ -20,7 +20,7 @@ class Conexao extends PDO{
          'password'=>'#jJ1234567891011'
       );
 
-      //unset($con_dev); //Para mudar para o banco de dev basta comentar essa linha
+      unset($con_dev); //Para mudar para o banco de dev basta comentar essa linha
 
       $con = isset($con_dev)?$con_dev:$con_producao;
 
