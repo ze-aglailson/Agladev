@@ -107,7 +107,7 @@ INSERT INTO Cargo VALUES
 (NULL,'Coodernado(a) de RH',2,'5000'),
 (NULL,'Vendedor',3,'4300');
 -- TESTE
-SELECT CONCAT(P.pessoaNome,' ',P.pessoaSobrenome) AS Nome, P.pessoaEmail AS Email, C.cargoNome AS Cargo, S.setorNome AS Setor FROM Funcionario F
+SELECT CONCAT(P.pessoaNome,' ',P.pessoaSobrenome) AS Nome, P.pessoaEmail AS Email,P.pessoaSenha AS senha, C.cargoNome AS Cargo, S.setorNome AS Setor FROM Funcionario F
 INNER JOIN Pessoa P
 ON F.pessoaCod = P.pessoaCod
 INNER JOIN Cargo C
