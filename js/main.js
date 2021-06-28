@@ -105,6 +105,56 @@ window.onload = function(){
         },500)
         
     }
+
+    //Efeitos telas login - cadastro
+    
+    (function toggleBtnTela(){
+
+        let btns = document.querySelectorAll('.btn-aba')
+        let telaCadastro = document.querySelector('.tela-cadastro')
+        let btnAtivado = true
+
+        btns.forEach(btn => {
+            
+            btn.addEventListener('click',function(){
+
+                if(this.classList.contains('btn-aba-active')){
+
+                    if(!btnAtivado){
+
+                        this.classList.remove('btn-aba-active')
+            
+                    }
+
+
+                }else{
+                    
+                    btns.forEach(btn=>{
+                        
+                        btn.classList.remove('btn-aba-active')
+                        
+                    })
+                    
+                    this.classList.add('btn-aba-active')
+                    if(this.classList.contains('btn-aba-cadastro')){
+
+                        telaCadastro.classList.add('tela-active')
+                        
+                    }else{
+                        telaCadastro.classList.remove('tela-active')
+
+                    }
+                    btnAtivado = true
+                }
+                
+
+            })
+
+        })
+
+        
+    }());
+
     //Animações na section serviços
     //btn mouse
     //Scroll serviços
@@ -170,7 +220,7 @@ window.onload = function(){
             senha = $('#ipt-senha').val()
             
             $.ajax({
-                url: 'https://agladev.com/login.php',
+                url: 'http://localhost/Projetos/AglaDev/login.php',
                 method:'POST',
                 data:{email:email,senha:senha},
                 dataType: 'json', 
