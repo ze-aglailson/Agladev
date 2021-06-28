@@ -1,16 +1,6 @@
 <div class="grid-login">
 
     <section class="container-login">
-
-        <div id="load-login">
-
-            <div id="icon-load">
-
-                <div class="c-loader"></div>
-
-            </div>
-
-        </div>
         
         <div class="content-login">
             
@@ -32,13 +22,22 @@
 
                         <div class="form-group">
                             <span class="icon icon-email"><i class="far fa-user"></i></span>
-                            <input type="email" name="ipt-email" id="ipt-email" class="input" placeholder="seu e-mail">
+                            <input type="email" name="ipt-email-cadastro" id="ipt-email-cadastro" class="input" placeholder="seu e-mail">
                         </div>
-
 
                     </form>
 
-                    <form action="#" method="POST" class="tela tela-login" name="form-login">
+                    <form action="#" method="POST" class="tela tela-login form-login" name="form-login">
+
+                        <div id="load-login">
+
+                            <div id="icon-load">
+                
+                                <div class="c-loader"></div>
+                
+                            </div>
+                
+                        </div>
 
                         <div class="title-tela">
                             <h3>Faça login com sua conta</h3>
@@ -46,9 +45,24 @@
 
                         <div class="form-group">
                             <span class="icon icon-email"><i class="far fa-user"></i></span>
-                            <input type="email" name="ipt-email" id="ipt-email" class="input" placeholder="seu e-mail">
+                            <input type="email" name="ipt-email-login" id="ipt-email-login" class="input" placeholder="seu e-mail">
                         </div>
 
+                        <div class="form-group">
+                            <span class="icon icon-senha"><i class="fas fa-key"></i></span>
+                            <input type="password" name="ipt-senha-login" id="ipt-senha-login" class="input" placeholder="senha">
+                        </div>
+
+                        <a class="recupera-senha" href="#">esqueci minha senha</a>
+
+
+                        <div class="form-group">
+                            <button class="btn btn-login" type="submit">Entrar</button>
+                        </div>
+
+                        <div class="msg-retorno">
+                            <p>Mensagem aqui</p>
+                        </div>
 
                     </form>
 
@@ -59,9 +73,7 @@
             
         </div>
 
-        <div class="msg-retorno">
-            <p>Mensagem aqui</p>
-        </div>
+
     </section>
     
 </div>

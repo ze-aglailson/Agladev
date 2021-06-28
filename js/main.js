@@ -216,9 +216,11 @@ window.onload = function(){
 
         if(verificaCampos(this.elements)){
             
-            email = $('#ipt-email').val()
-            senha = $('#ipt-senha').val()
+            email = $('#ipt-email-login').val()
+            senha = $('#ipt-senha-login').val()
             
+            console.log(email,senha)
+
             $.ajax({
                 url: 'http://localhost/Projetos/AglaDev/login.php',
                 method:'POST',
